@@ -22,7 +22,6 @@ def hook dut =
     def optionsTransform options =
       options
       | editDUTSimCompileOptionsSourceFiles (
-        source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/oic_types.svh",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/ORBIT_interface.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/orbit_payload_assign.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/CDAS_SingleDestPerID.svp",
@@ -184,7 +183,6 @@ def hook dut =
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__cnd_axi_m0.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/addr_dec_dom_cog__snd_axi_s0.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/route_info_dom_cog__snd_axi_s0.svp",
-        source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_s0_define.svh",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_s0_addr_mgr.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_s0_ar_top.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_s0_r_top.svp",
@@ -206,7 +204,6 @@ def hook dut =
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__cnd_axi_ctl.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/addr_dec_dom_cog__snd_axi_ctl.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/route_info_dom_cog__snd_axi_ctl.svp",
-        source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_ctl_define.svh",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_ctl_addr_mgr.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_ctl_ar_top.svp",
         source "{blockOMCSifiveRoot}/rtl/lpddr4_ctrl/vcs/dom_cog__snd_axi_ctl_r_top.svp",

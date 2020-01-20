@@ -2,9 +2,6 @@ node_modules
 package-lock.json
 *.tar.gz
 *.*.swp
-./temp
-./rtl/lpddr4_ctrl
-*.log
-*.*.log
+temp/
+rtl/
 *.bk
-*.*.bk

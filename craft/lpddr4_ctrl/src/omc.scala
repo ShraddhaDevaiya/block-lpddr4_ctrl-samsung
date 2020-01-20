@@ -25,18 +25,18 @@ import freechips.rocketchip.regmapper._
 import sifive.skeleton._
 import sifive.blocks.util.{NonBlockingEnqueue, NonBlockingDequeue}
 
-import samsung.com.blocks.omc.regmap.CSR.csrAddressBlock._
-
-class NomcTopIO(
-                   
-) extends Bundle {
-  val TEST_MODE = Input(Bool())
-  val preq = Input(Bool())
-  val pstate = Input(UInt((3).W))
-  val paccept = Output(Bool())
-  val pdeny = Output(Bool())
-  val pactive = Output(Bool())
-}
+//import samsung.com.blocks.omc.regmap.CSR.csrAddressBlock._
+//
+//class NomcTopIO(
+//                   
+//) extends Bundle {
+//  val TEST_MODE = Input(Bool())
+//  val preq = Input(Bool())
+//  val pstate = Input(UInt((3).W))
+//  val paccept = Output(Bool())
+//  val pdeny = Output(Bool())
+//  val pactive = Output(Bool())
+//}
 
 class Lomc(c: omcParams)(implicit p: Parameters) extends LomcBase(c)(p)
 {
@@ -53,15 +53,15 @@ class NomcTop(c: NomcTopParams)(implicit p: Parameters) extends NomcTopBase(c)(p
   val ioBridgeSink = BundleBridgeSink[omcBlackBoxIO]()
   ioBridgeSink := imp.ioBridgeSource
 
-  val omc_params = samsung.com.blocks.omc.regmap.omcParams()
+//val omc_params = samsung.com.blocks.omc.regmap.omcParams()
+//
+//// create a new ports for regmap
+//val regmap = LazyModule(new csrAddressBlockTLRegMap(p(CacheBlockBytes), 0x40000L, omc_params))
+//val registerIO = BundleBridgeSink[csrAddressBlockAddressBlockBundle]()
+//registerIO := regmap.ioNode
 
-  // create a new ports for regmap
-  val regmap = LazyModule(new csrAddressBlockTLRegMap(p(CacheBlockBytes), 0x40000L, omc_params))
-  val registerIO = BundleBridgeSink[csrAddressBlockAddressBlockBundle]()
-  registerIO := regmap.ioNode
-
-  // create a new ports for vip
-  val ioBridgeSource = BundleBridgeSource(() => new NomcTopIO())
+//// create a new ports for vip
+//val ioBridgeSource = BundleBridgeSource(() => new NomcTopIO())
 
   // logic to connect ioBridgeSink/Source nodes
   override lazy val module = new LazyModuleImp(this) {
@@ -74,11 +74,11 @@ class NomcTop(c: NomcTopParams)(implicit p: Parameters) extends NomcTopBase(c)(p
     ioBridgeSink.bundle.rclk          := clock.asUInt
     ioBridgeSink.bundle.rresetn       := !(reset.toBool)
 
-    // source/sink assignment for io will be connected to regmapper 
-    ioBridgeSink.bundle.TEST_MODE             := registerIO.bundle.REG_00.data(0)
-    ioBridgeSink.bundle.preq                  := registerIO.bundle.REG_00.data(1)
-    ioBridgeSink.bundle.pstate                := registerIO.bundle.REG_00.data(4, 2)
-    registerIO.bundle.REG_16.data             := Cat(ioBridgeSink.bundle.paccept, ioBridgeSink.bundle.pdeny, ioBridgeSink.bundle.pactive)
+//  // source/sink assignment for io will be connected to regmapper 
+//  ioBridgeSink.bundle.TEST_MODE             := registerIO.bundle.REG_00.data(0)
+//  ioBridgeSink.bundle.preq                  := registerIO.bundle.REG_00.data(1)
+//  ioBridgeSink.bundle.pstate                := registerIO.bundle.REG_00.data(4, 2)
+//  registerIO.bundle.REG_16.data             := Cat(ioBridgeSink.bundle.paccept, ioBridgeSink.bundle.pdeny, ioBridgeSink.bundle.pactive)
   }
 
 }
