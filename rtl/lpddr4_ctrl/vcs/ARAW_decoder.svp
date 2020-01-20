@@ -1,0 +1,77 @@
+//=============================================================================
+// Release information
+// Design version: sifive_sesame_rel3_190711
+// Document version: OMC-V1.4-UG-R2.11, OMC-V1.4-IG-R1.00-SESAME
+// Release generated at Thu Jul 11 15:30:19 2019
+//=============================================================================
+
+// ============================================================================
+// Engineer:       peter.bc.jeong@openedges.com
+//                 connor.jg.yun@openedges.com
+//
+// Design Name:    ARAW_decoder unit cell
+// Module Name:    ARAW_decoder
+// Project Name:   ORBIT_IC v1.0
+// Language:       SystemVerilog
+//
+// Description:    
+//
+// Copyright 2016 openedges.com
+// =============================================================================
+
+`include "oic_define.h"
+
+module ARAW_decoder
+`protected
+,+I6Y>1GYJ;W<<R\30F#(c_69PVc-+T4GDS4AYe\3RJV@97RcE#d6)0&668G1/2>
+(YdB//(bA2Q-9VE(^b79NG4Be;7c9YV6d7JLT,EG=F:JaHJ?NT\U[GS&@cL+18]3
+#B,@Ya1[20Dc1(QMMPS[<.7O@SE,17;;O53U-Ub3DA:.bK5H:\+)&0[_7GbLP.Wa
+^F5_Y@L--dI=3C-4V^U:&L7A5XR)=/>TYg<Y]eA>^Je0aO-9JK[X4V,.+FX@,L[J
+-Je.)J5&093&ZB#UH4e3;_N[##VCWAd-B._/Vg\3[@4^[_O.\42H/.6WJU0)V+OY
+IDNe(:LA:g),P2EfX^J/_1<O?/3J9NMQ+6EOY=GM4>44XRc=)d0K3f)>>JeU,YQY
+M=^FGDI@FP]G9(Q_a3=\T\_Rde\OOYUXaPZ]@B_-79?2:)9[Z;-gO>8<+4<AY^KY
+AR4UL+75,WVGbc=gX@OJX6-5e>@:^1Jb\S8]J#)4?D/?OF.O>:_T.PVMKQ4fR66?
+:3J2KI&B]B)E4H-Wd)&X=F5f&QI]YO-W_/YEJ5[HN6]g7#>N-]?UY5];?5EKJ:bG
+5?gAc;g30\26?DV71]/)):)]ELV,H]1E3_c63T\>C(^C,YI_-&510OeXV-QQ3_S1
+>RAP+GGcOA-QX\UG-/eH<KS/-g3P59:c8]@U+H_ScJTULSHH+/.MaC#gFGWMde+a
+Q3W<_957R^dMMX.]//.XM[>Wc8J+aNF:UI?aSWV>V)X7g4J8:^PAcA,KU?S(LIgM
+\LO?YJ#0/X6I4OfVdRCJD2ZH<DgbF@9T.HPP-VH&(;EE.<,F^,-)T3M)/8:C6?Q?
+^JR=N\Z0=.>H,V_\R99BWg)E&E&<d?26V:/M7dB8H1=4V]7>,DH3_)&LL7AK=>+c
+HC=LY@a)4c;CQdAS31f2;-gPHJI9a)T40f958ACgS,42]02K#^M3:G;P<)J^QK^L
+]AFIWG.Vg#U_7S7d_T,W@0(Q^b;SFdUQC]O]#8NXbb[UFS:Wg58@H.];EVBa))=Z
+]5WN=\/aQ8I4,KDURHb9LQME_#3O4<>_J\Sf^90A8<]cY3W&8>.efA\MHNQ)]\\A
+-6J9(42MZ\:5GCGC#;>YIKEF6[HL]7-K0&G<,_U<>>:Pf[M9L_GOM<68b,^DI/5Z
+bQYHQF],4T:3HL:MSGW+,U_=c@474N#ac_/=/SYfX+XHNYf4KLAg5_T5P-379]44
+4^JHO6V0M)Jg9G4T.(;:QbMc;.-@^]^4VOg+_V^>)6\54VLf=U+TaLDdV4AW0NTA
+Re2)G?D6@AQW=R_Q0H.C89@W[>.OHDSb-=BbSe?+=41G([&(77/<5Jb2gO],dXA_
+U:P8:PS)@[Oa+BdMUG[EZgT3eUdZ8dM)?S?19090&,>(1;2T]WL0Kg;Mg(#D@O?3
+Y]WGS/(G3b4b)1VbIRR/YeEBgAEO]PWY@V]6GV1>.KCNf]g?K:MKNQ:c=>D9a2bL
+O;&_WJI\_,AO:I3TXbJEe#(BX)S@^VI5c#O5&UOSN@f]KU\_^0\Y41OMQK#4a3\(
+X/[Y?WJ;]Ug6U?2;@3619\C_EcFX@a+@c(__C31f9cZUI>MBRJ?,9MNgMVK-=]BO
+>OcVB^c(.[[2NB(U23BCMf)Z+.A0^=COd^<2LC./SEXMf]bX&Y[6R&IcD7K76LXf
+D8XEc]SS;2WSZe4LgLKTegae1a[QJ9CRILR=bHdZM6\7Y:8S]Y8R@[+44+ZFQ&Q6
+1@+(R89]V0f/;I&9JDA[W>4WY;d:3^8#K6+<R3RdPI\/c11#7=V8@4M#(?DEMQXc
+Qc2YQg<+\KZ@96PRME:=4C7;7Hg>#Ka7Ef+C>2d<,LTQ_Cb3#/.7Ta/#R[\7]6L5
+CcPOH6C@dSWW2f;2]M-8^#&^;5fVE4T\T>8aZGW8,;_[60X[YS4RL?P2QW_Y]H4W
+S<FG7CWAAPGg/c7a=8f/M6N7H3)L:1^acF]5b3</eIV@WbM1Y]geL4A_<B^P^3b?
+;J>+/2R0+\9,S1>UIOaEdT);_@G5f32N.c3L_R3aK2U<U<YTe6831g;728R=geO0
+8d63d3#8\3I>fc#FRc,PERK&WN3P(VDL64L35bHUKcKFI1]9X.;_;(9;-0XAUd9T
+F_::NGZUIUC5(5:C3c8MII?_b?MGdH[-EXg@&0XgGRI[LcE/5X>MXG)61@GF4J85
+C#78#c9C:]T<&^N8ccSPI3J<Q5G676\RR1JPO981I3:\XS/.1,=:c)f2E2E,8A\W
+VJ(H?@,-6L<H-Z1>AV1).JH=KNNWQU<:5TR&@<;5>J>A?F0E=55P\.2Fa^.7S[4J
+]\5.F8>;?8=.46;5KXAceOcaY0]/XI;[8;1U7R4_R]=WJeX\[1A6Mcb(MQb8L#2O
+B=2b>?<WB4?-Xa;aYc>@VG-WXOYcA5PWXL<D_MV4N+MXJPFa&,5<+X4?>>H?aZ=,
+L2\^[YOE+c69LGcHL0\X3SUd39SIO3#UF82@A_)gS-_/FO1CR-[CZBP8]QPR=D=/
+MK?&S/1+Mg#W(IK_SJZFT^ED\gG3/EUXgH36W5d=ZYM@:g<Q>3[J\PdSN24B)G+:
+E?1IFQ:QCI)SP:VC+2^?(4EMB0PF:];/Wb8IQ@CaQ_b;XZRN&BB.,?a0Z3F0_74,
+\D/>5MIC1YC^BD@N[8X:b:&E<d,:Q#6FOcVe4?UYG&E<DV8JZ0747>\2+g)BaG-]
+K/WD]/#P,5f]#I&O>g9<&YdZRC&4F+#XH_Y5KAQA+4W4KH1;<5M[N4)HU)fJY&R,
+PJLZ./3#=M7YL,7\#4(OY0&9<DA4f)G&F8C_ZS+,1?J.(TJ#MJL]_Hg_:LIIR103
++A?U;UHeKODWOP#HSXL_KfT4_H@f#JH+&H6gbP&Q;:41M59[,/]bULHFbU>b],If
+F:.95)KPOXZ?5Y=94;fHKLT44$
+`endprotected
+endmodule
+
+`include "oic_undef.h"
+// vim: tabstop=2 expandtab softtabstop=2 shiftwidth=2 smarttab
+

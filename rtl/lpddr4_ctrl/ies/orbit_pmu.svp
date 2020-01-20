@@ -1,0 +1,115 @@
+//=============================================================================
+// Release information
+// Design version: sifive_sesame_rel3_190711
+// Document version: OMC-V1.4-UG-R2.11, OMC-V1.4-IG-R1.00-SESAME
+// Release generated at Thu Jul 11 15:30:19 2019
+//=============================================================================
+
+// ============================================================================
+// Description:    
+// =============================================================================
+
+`include "oic_define.h"
+
+
+module orbit_pmu
+#(
+  parameter NUM_OF_BLK   = 3 ,
+
+  // auto calculated
+  parameter `calc_ceil_of_log2_of_depth(NUM_OF_BLK_INDEX_WIDTH, NUM_OF_BLK)
+)(
+  input  clk, reset_n,
+  
+  input preq, output paccept, pdeny, 
+  input [NUM_OF_BLK_INDEX_WIDTH +1 -1:0] pstate,
+  output [NUM_OF_BLK -1:0]               pactive,
+
+  output logic [NUM_OF_BLK -1:0] blk_preq, 
+  input        [NUM_OF_BLK -1:0] blk_paccept,
+  input        [NUM_OF_BLK -1:0] blk_pdeny, 
+  output logic [NUM_OF_BLK -1:0] blk_pstate, 
+  input        [NUM_OF_BLK -1:0] blk_pactive,
+  input TEST_MODE
+);
+
+//pragma protect begin_protected
+//pragma protect key_keyowner=Cadence Design Systems.
+//pragma protect key_keyname=CDS_KEY
+//pragma protect key_method=RC5
+//pragma protect key_block
+6z6+/m7mZNC4/XUSx5azhfOG2afvhlBY6MJZ+rAPRKmrHaog434NqukvovTIwTEo
+aFLma2q8Pd+wR9P0H2QiPMXCiBWTPcdd89JCIW9pLsiJAYXl36jVTwOrLUNcm/rP
+vZFcxoaSyX3RC3F9lzzIKcGoUDRGAkYQl6hMeZHIFOXgzX/dd4GI7g==
+//pragma protect end_key_block
+//pragma protect digest_block
+1tmFSfihas4adfvsgvxgekwFdPM=
+//pragma protect end_digest_block
+//pragma protect data_block
+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
+VNUELN2uvwW7P/h9T+Zcfw==
+//pragma protect end_data_block
+//pragma protect digest_block
+wx3q7qNGjlKrinnrbZpxS2F3CMY=
+//pragma protect end_digest_block
+//pragma protect end_protected
+
+endmodule
+
+
+`include "oic_undef.h"
+
+// vim: tabstop=2 expandtab softtabstop=2 shiftwidth=2 smarttab
+

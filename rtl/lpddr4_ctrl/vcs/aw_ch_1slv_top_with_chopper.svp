@@ -1,0 +1,112 @@
+//=============================================================================
+// Release information
+// Design version: sifive_sesame_rel3_190711
+// Document version: OMC-V1.4-UG-R2.11, OMC-V1.4-IG-R1.00-SESAME
+// Release generated at Thu Jul 11 15:30:19 2019
+//=============================================================================
+
+//=============================================================================
+// Description :
+//=============================================================================
+
+`include "oic_define.h"
+
+`ifndef __AW_CH_1SLV_TOP_WITH_CHOPPER__
+`define __AW_CH_1SLV_TOP_WITH_CHOPPER__
+
+
+module aw_ch_1slv_top_with_chopper
+`protected
+6VX(GK9B0?#a572PgNVC1cc7LU9138DFX]SK6gO@RI8L1IA0^S,M))Y^a6?LVQ9G
+4cCC>WNOPg(&LdAFJOH/[C7]IX[O9c8e]+S,ZNMT@F4EG0#M=1&F]bOgP^dAP_V#
+KEHFFMKG9\]?7QD+A)?78b9P#8R;P6G-,<)]8F>\IKc.6DN4OIP+e?5Q34R&F_\]
+ATI_OO4#-Eb0T5-SA^WA9Oc9DQ<NNeO[C<^&[B7TCG,\@,ZX9Vfb55OKe@Ng8&Za
+?5INEaIHdRbVRE>;OHF<4Z-aO&FQM7C]/4_8aTF8f1E7HB<Bb858(a&;Y1gZ(P1M
+U-a8/aMGDODT3D19DeNYNJ76geZa/0/#:,<,Bd&g]a6Q_6Y6fC2_CTaHWQJO@-B;
+.8AOLO1ZeGcNgU.9Ne5F#12^:e^.S&]2CUSbQ2=/4&\HN>)R5HG.-83GL?ZG6V^D
+HEMeXMN)TN-WXYD-8K:TIY.gJDA9Cf@MN2TIV>UD\<]U3.OeFQZX_a./+WE2,N_K
+E@ESdH4TG1=@=Kg@AS,c2@E#J:@gJN+TfF2B)LN02F\PTFaKNO6DBZ,?aFRG_,=Y
+M_:cc1cH2(D/)YB3/^+TZQ4;-MTFWA(C8gd)5(GegdQg\L,+Z9,cd5^4@4M.fE2O
+^=e6[2KV1d;V=FWE27dB0gLMXS-VaU/6=,IMN))f+TDLIWMe.F7c03AW,C_bG;B.
+I\X,G5L4bQNS;<LK./P_bUNS0;F3U_bgb^;:g>.2b\-=?D?S(RLgL=gI?4)UL,Y3
+U<fELV2b]3N)DM3;Gb8=H=dcC&[.V,C6\CZ3/g:&3]NQg#J6Ec,Re@70JE.7IdH?
+NUF=1G;3T,)J0c\b]G]&??(ZLc-U=2[4@CHS@MMB?R[cV:N^21Ag,Od65O3>3Ld1
+cI-,WOT:bO;U,@_gV\Ae/Of8e@__^9<W:,=+<)6JQ5\4F/U;P3DZb]@T]-c=X_3:
+^QW=B2:[b>^3eK<(_P]]]=TQ;/QOLWb/PEeWPM&Kcf_bVNZ-_[7>_Y:g<fBY,,XG
+I&DS?/>/M:^O:W4.cFH-ZA\L-=0);<.^&U><C?)](f1F&>WC-_F/FV3C5<VNJDR0
+]fccP^KXT0PH>JNZO\S1-AQaDg2O,CXNY;5,f&1MFbDHY^6-]=6N&8@5N7IYMS6F
+<;=M^FR^J43@C]A+5E1&aP;<ZIY3?SDYDfB8g6]\V+AX&G[8\\fH:O=18CE5f095
+T,8-^5\db+B,=ZC>:;6Ka.94+R9M.Z8PI:@#VPg,S/c2b0_ZBQ^7-)50AE/b#(+^
+Y4XA/15.?g2,MFcU#)H,]8/AYQS4048F@fcC2K1KBWP[0:_^NTN.L4f>;MB\V#8f
+DD\?IgR79W8OI0V]V85X>:Sc&<a6,@dK4Y^(8RVQDXUD<7&NgS9VS^^b6O5(EZ)U
+[M/ceT(a;8P2AKY;_;P\.,]P5E18(CY(Ia_2FfbBBZ&_eBa,7.(@Ee]7g+f2JK+,
+>J\G#M+AGA@F+049Rc6V/J7),J+/?2fWC^^81^f>?e<WYW<,NT(OJ7BT6E0(d(e#
+1&b3H6:OK2^bdgW&;g?@1aS.[D/?DN(B7IG_\_>=MgWId9f>\W\4e-TLeM(eGDgE
+G8A37=6/NX@=(88P8;,HY+;@d,3LbLCPGRa(QU:(_#PT:]?dW9HJNS0-Q;HgOI(#
+WPfR:L5XMFE+ZFT-2_66aF-=E:K/b280[JDZK/Of)6dOH?GLcbEO8P7^#10__aRA
+PBF:@ZMW:L\KUM3-R98,2AWO_ZBKDJ]RZ210dTI:ZO&L[A4@JJU&H62)O_eGL]3B
+ZO.d30WYYG-7UQAVGc_MM3dY89^LO?-GFTe9+8,GHb#/AL7E>C&S6G6ZdHd\CZd[
+d<-=U<6eIV2KI@[4_I&8S/I4e49I6WNRPJfJb,R]?80TcDT0=5YU=EEVBBF2Ua#&
+NTb7Gc]B<(9/-RG.]&:TF57B<8K@G-^11-+R#HdCH2dMGP(J#K]dOgIL#Z4GGFLF
+-FR<38>8B34Q8H_FS(G[CZ2?4\4&+@R1QU\]\XMRUBQC;4<(=2X>[_#-._^JP^\A
+1TM\,--11\\]MaEY3S\VZ([VL&FH;)6ddEAXC]Y=\MM[<^TD_696;6GSBQ;C?4>1
+P+]CD)feFT2;7S2SZEa^4.MMN/fD7KIL?6Bg5I:?K910-V?f@,=8Wg6O>WB_D5&8
+@L_._fIW>;.RZ.ICX3M3Ob6J.AC)8@99Y9#0a\@QZe^7(R;SAO[?]B3IN&gC.F1B
+ME(J#\\/?K&FQYKF8:8L5L:#V-2/:=Y2fC<:A(+N-6\.[L(H&B?#(^2STE)Y=7I&
+J?^4(X0+>>3D/#IV;:1GZdY+ZAc0;@7RE6R>7-LeW+@XG>AK\EAD160e6HX8W)G6
+LV_>9LGP+)8GS/)]=.&Uf=(\3C@A]JaW7+=2N[[P@SWPK.)?L2N_07VcPLf/@]Zg
+/8@=d)XZX7]S<a4U.K;)GV0Me+)Z=ff&KRN)3UGJHI4P/7W[..9SX&ZT0-WE2D^c
+dgf262e3L^db_GM)FGaV)_+d+21B^f(0=Z/VO/SO4+30dAcYUaGRB#C<@Z6.a;_P
+K2DdU0E6a61&Q/F^1cRO_S=Le6=:a1BKH3&7^=0Ib\C)I3:NWOF;9OB<QOK9^L@1
+EY(1<RcLQZ.FDaEdfUMY&7E:D:F89b+XG\)e(4NaAHUAgTdL44c)(3UVbG/Te3B_
+:OG/,^KN;,]ZKgd@S9;gO4]+EFfR1H:R<9(C)XKL,UfcWW_@Db@)Z0SNbX+OI6QA
+Z2J>Z-@I^M(?VJ?gIU@<N]X94b6[BA-I^f>P-)#YP)(_Y5[?Y<2(b>:88H75N@P2
+:_ULO(d.YL48(,5#E/WEQ[Q2M6W:\MFBW(FSP^).&O.,<2D[(^^+\b2)]QbZ1EAH
+W.\;J)R_F#&e8J^A;Q):deZ()B6Kc6D(5K/HA&.\^6]eVMWS^&>/M(\<K.G/?1P#
+KKIY;,F9-XC>Y\&NIE<IBKSI\3[8#6)A0,OIB(-2>6);<3VTC@_I:P_LTDa0FQ4Y
+<VE2Q&:F4_WJ^3XBcPNXK&1&fg+YUMb-C2W\;G=b+KFAXe,C4b[9FSQ:FJb#g=BZ
+Tc?a+(aKVCD8&/P+QgQ-D^]?JYEC#6[)+6NNYc+&<MO\1B\V.dCB:a=9Qag8#LM;
+<9]<Gc[BG.-gR_cOC#4Y@]C0+1Z/ZZDaS:7g6\#7BDV-:e>Z_EaO;A^SZ>)^U6WU
+=I=P6&S+LJN)+LNOf&7BgKH_1UE[aTF2=ND7c+J64]cTVJ:L#+^0LgEfA0Q7LL;(
+=86c<6:9c&7SO]NgQ/K93H:ZUU<N)RfV]UcWcFY]IL>KB;^AJ9KJ@J7>QVgBKR>/
+4##L27>fB@DEC-(DUCK?M5W97PB3fZcS9eQ?,cO]KeR0U3H2f@5]I1;cf#c5aULW
+^.D9W78DWe(-TOdBcb=H0cbO7aU9I_RGTT^S)B+DX0,f9D=)ON.1<.M8?>Q3XM45
+8b,gZ&?RV[ca)F1DFUc]0eWX<E(N7(+3I94HB-1Zd_F-K()5Z5FD>bgQT/3,.UL/
+cdPU,5B>(B)GTQYdP.)Z@VB@E+X677T>B_A=L;ZD1K.G20QRcY4\9&L0U_+BKf&W
+#GBa26a;I#aY32IL(0@deSLB;D9HMWDW^(=fO&/4fV?ZL&J>3(/,S(XL>^b6VDV@
+9]F^e^7F\^Zf_KF&VS;YQ9Lb_21[>^Ye26SFX=>3Jf_U+WK/0=(CTL@LAK\KA7UF
+.eGAV8EL2VQa)6I8Z#-gZcdeZ/[UGR;LXY05eNNZLN.L?0E^1@&=78Y^0+?XXU5H
+@c&#9M^K/<ISC)eWU;V.4A@BH#Ca;:TQ_\?GF<WcUCV0@@Gg.UHT9a.gefa/70GM
+0U]Z(C]N^)0Gad^SCA,dIWIa&7Vc./,[,2UPDB^H0IO:I#5#)?25+>=B)Waf?gg\
+Z^;Y\)[eGJR@BcFU?JASeU<8FMLTaF^B^@+,;U<cNgA9;Wba,2Nc8[Q:K\KH^bB=
+DO&a;TDMF2IW/aP;Z.(D(N/;L17>1I+7N-U?dJ=#9N0W_A-(T6.W_-M=#:?N\+_2
+^)f&K7b7#3Y?[UX7e:4:.8VdbA@YB<E:g4DEf/LT8C:S@1#Z69@&D+6<cOPF<^@A
+^M+2=:3RfP;F]QMK3cZMV/=Jd:#FSR0RYc/@_Q&fC5&+=[/JC(D_+?=0ET0fNHCe
+8CD.gE=C.V2DbV?#]8,R8:YZ0H+(>5Da,UbaIF.X54BC-DZPbL9ec;H/:b9e@8NH
+R>^IJE:8IYe1719)fEIL80+#1Q57c+TT2#e.ac@&7,3K]C._E[/Qd(@IVX=,McfB
+cR?P#c^;5&g;SXLO27C@&M^c2D^++FL6&9HOf>LM\g,9YWH8;8@Uc&SYZ_F2dPJ5
+4&P#(D:gb6UPII0T)@077[L^</Z+1C/5(K>A\39X@KR3:0CA8.cJMQ>Q\[A(VD\B
+\K?P=(19f/>I/>dI@#4Ec;EAGBE(Z=SS57J,2:H0=N[Z=6Y_PVDNL880((X4DfMV
+eP4NYV:V^acTIPG7N6>gG]P.LPIR+bfOgE,WE:Z<b9L077SW7R7__:1_3M1X;OP8
+0I9g@@-E/aQgLSPC?.H98CJVVQS/R2BW]<DN.b/)AC=47LeCU;g4Z/[S>/eFVK,.
+gB#37BDD01CCYb:_]4;1fcT71C\G8PL-YI_aGP2QL2fTXPT1]\Rc=TEES9+O?0J&
++dK-62L_9SLGB,J\f^_M9G)D3&@VJ(ZJEe,GKRMA#8RS?F;6=.MdS9<2(@]CMF9f
+V,FgXV5J+=P)+)5BB8@S.0UI+;Sc&NQ:W5?b&UWJ-QAQ6Ob]g-U3-U1\)^[UW=2L
+B=\EW1MC)V24bccA(4XS\MUBaF656OS&?QgVe-,^:3L\-=]K<&4ZFdR&?\4KBaf5
+<;IX:NLFR3)[5/4adVB2Xa3fKJ/L6e44F]]9WOIF3YCNa[f+DfV>-K?^Q3&FbaAZ
+0[#GfbdD#+T;<Ug]U_UC;WIW^#eB/8J=KWb?>=;4UN:Y]O,#U#7F/B(MY=Q_O_Y8
+7&0R,4)M&_KV:O1_QR8=Q2TT3?2d2eDWP7ZF?5-bYTY^<X[ge,Z-^^aH/Qc^2Ee=
+8HPA+aI@CE6:K\;NARdfA15=&TF.[SB.?;VC].K4c2\?F).c&@NTg>Cc@#b9d2R)
+6F,39M)f]-BP[=_>RENb;3D:]_DI2MXgGI>JM00eeId)P-6GAYS@cI)^O?GYb(+6
+eE@3AL1OR5-J>d?Q61IdXcd#/cSI-NdEgb.TB&G1[KO^JO>33>g=G=g8<^3&9P3F
+(@MH\(3.b=Nb>,T14#\TcB__HKG4-+W:.):DW]NUd@VHCPH_WCe13K1PW9e0W,:e
+/H-95\@HM3H36AADO/VX/M)0G6+c8(\Te.:ME<LAUH/(.N,X06F/^,LTX,KY/fDD
+I?f=/#@/QIH+;1;:.R@EGegA4fYL,@V;3+aL>YMCZf#^\_Q-AeLe[6BPV)OOPEcL
+Q4NgNMgV5f;+.$
+`endprotected
+endmodule
+
+`endif
+
+`include "oic_undef.h"
+// vim: tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent smartindent

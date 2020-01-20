@@ -1,0 +1,28 @@
+{
+  "name": "block-lpddr4_ctrl-samsung",
+  "version": "1.0.0",
+  "description": "0. Information",
+  "main": "index.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "http-server duh_doc &"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sifive/block-lpddr4_ctrl-samsung.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/sifive/block-lpddr4_ctrl-samsung/issues"
+  },
+  "homepage": "https://github.com/sifive/block-lpddr4_ctrl-samsung#readme",
+  "devDependencies": {
+    "duh": "^1.16.1",
+    "duh-ipxact": "^0.4.0",
+    "http-server": "^0.12.1"
+  }
+}

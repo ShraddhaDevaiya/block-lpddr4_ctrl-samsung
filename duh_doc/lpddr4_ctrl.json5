@@ -1,0 +1,357 @@
+{
+
+//////////////////////////////////////////////////////////////////////////////
+  component: {
+    vendor: 'samsung.com',
+    library: 'blocks',
+    name: 'omc',
+    version: '0.1.0',
+    fileSets: {},
+    pSchema: {},
+
+    model: {
+      views: [],
+      ports: {
+        $ref: '#/definitions/ports',
+      },
+    },
+    busInterfaces: [
+      {"$ref": "#/definitions/slave-APB4_rtl_ctrl"},
+      {"$ref": "#/definitions/slave-AXI4_rtl_ctrl"},
+      {"$ref": "#/definitions/intr"},
+      {"$ref": "#/definitions/slave-bundle"}
+    ],
+    addressSpaces: [
+      {"$ref": "#/definitions/addrSpaces"}
+    ],
+    memoryMaps: [
+      {"$ref": "#/definitions/csrMemMap"}
+    ],
+  },
+
+//////////////////////////////////////////////////////////////////////////////
+  definitions: {
+
+    //__________________________________________________________________//
+    ports: {
+      //================================================================//
+      //   DMC                                                          //
+      //================================================================//
+      //-- [1] DMC.apb-i/f ---------------------------------------------//
+      pclk: 1,
+      presetn: 1,
+      paddr: 16,
+      psel: 1,
+      penable: 1,
+      pwrite: 1,
+      prdata: -32,
+      pwdata: 32,
+      pprot: 3,
+      pstrb: 4,
+      pready: -1,
+      pslverr: -1,
+      //-- [2] DMC.axi-i/f ---------------------------------------------//
+      p0_axi_clk: 1,
+      p0_axi_resetn: 1,
+      p0_awid: 7,
+      p0_awaddr: 36,
+      p0_awlen: 8,
+      p0_awsize: 3,
+      p0_awburst: 2,
+      p0_awlock: 1,
+      p0_awprot: 3,
+      p0_awqos: 4,
+      p0_awvalid: 1,
+      p0_awready: -1,
+      p0_arid: 7,
+      p0_araddr: 36,
+      p0_arlen: 8,
+      p0_arsize: 3,
+      p0_arburst: 2,
+      p0_arlock: 1,
+      p0_arprot: 3,
+      p0_arqos: 4,
+      p0_arvalid: 1,
+      p0_arready: -1,
+      p0_wdata: 256,
+      p0_wstrb: 32,
+      p0_wlast: 1,
+      p0_wvalid: 1,
+      p0_wready: -1,
+      p0_bid: -7,
+      p0_bresp: -2,
+      p0_bvalid: -1,
+      p0_bready: 1,
+      p0_rid: -7,
+      p0_rdata: -256,
+      p0_rresp: -2,
+      p0_rlast: -1,
+      p0_rvalid: -1,
+      p0_rready: 1,
+      //-- [3-a] DMC.clk/rstn ------------------------------------------//
+      aclk: 1,
+      aresetn: 1,
+      rclk: 1,
+      rresetn: 1,
+      //-- [4] DMC.intr ------------------------------------------------//
+      asp_int: -1,
+      cooldown_int: -1,
+      hightemp_int: -1,
+      overtemp_int: -1,
+      //-- [5-a] DMC.in ------------------------------------------------//
+      TEST_MODE: 1,
+      preq: 1,
+      pstate: 3,
+      dfi_rddata_w0: 64,
+      dfi_rddata_dbi_w0: 8,
+      dfi_rddata_valid_w0: 4,
+      dfi_rddata_w1: 64,
+      dfi_rddata_dbi_w1: 8,
+      dfi_rddata_valid_w1: 4,
+      dfi_ctrlupd_ack: 1,
+      dfi_phyupd_req: 1,
+      dfi_phyupd_type: 2,
+      dfi_init_complete: 1,
+      dfi_geardown_en: -1,
+      dfi_alert_a0: 2,
+      dfi_alert_a1: 2,
+      dfi_rdlvl_resp: 8,
+      dfi_wdqlvl_resp: 8,
+      dfi_wdqlvl_result: 4,
+      dfi_wrlvl_resp: 4,
+      dfi_phymstr_req: 1,
+      dfi_phymstr_cs_state: 2,
+      dfi_phymstr_state_sel: 1,
+      dfi_phymstr_type: 2,
+      dfi_lp_ack: 1,
+      //-- [6-a] DMC.out -----------------------------------------------//
+      paccept: -1,
+      pdeny: -1,
+      pactive: -1,
+      dfi_cke_p0: -2,
+      dfi_cs_p0: -2,
+      dfi_odt_p0: -2,
+      dfi_act_p0: -1,
+      dfi_ras_p0: -1,
+      dfi_cas_p0: -1,
+      dfi_we_p0: -1,
+      dfi_bg_p0: -2,
+      dfi_bank_p0: -3,
+      dfi_address_p0: -20,
+      dfi_parity_in_p0: -1,
+      dfi_reset_n_p0: -2,
+      dfi_cke_p1: -2,
+      dfi_cs_p1: -2,
+      dfi_odt_p1: -2,
+      dfi_act_p1: -1,
+      dfi_ras_p1: -1,
+      dfi_cas_p1: -1,
+      dfi_we_p1: -1,
+      dfi_bg_p1: -2,
+      dfi_bank_p1: -3,
+      dfi_address_p1: -20,
+      dfi_parity_in_p1: -1,
+      dfi_reset_n_p1: -2,
+      dfi_wrdata_en_p0: -4,
+      dfi_wrdata_cs_p0: -8,
+      dfi_wrdata_p0: -64,
+      dfi_wrdata_mask_p0: -8,
+      dfi_wrdata_en_p1: -4,
+      dfi_wrdata_cs_p1: -8,
+      dfi_wrdata_p1: -64,
+      dfi_wrdata_mask_p1: -8,
+      dfi_rddata_en_p0: -4,
+      dfi_rddata_cs_p0: -8,
+      dfi_rddata_en_p1: -4,
+      dfi_rddata_cs_p1: -8,
+      dfi_ctrlupd_req: -1,
+      dfi_phyupd_ack: -1,
+      dfi_dram_clk_disable: -2,
+      dfi_freq_ratio: -2,
+      dfi_init_start: -1,
+      dfi_frequency: -5,
+      dfi_rdlvl_en: -4,
+      dfi_rdlvl_gate_en: -4,
+      dfi_rdlvl_done: -4,
+      dfi_wdqlvl_en: -4,
+      dfi_wdqlvl_done: -4,
+      dfi_wrlvl_en: -4,
+      dfi_wrlvl_strobe_p0: -4,
+      dfi_wrlvl_strobe_p1: -4,
+      dfi_lvl_pattern: -16,
+      dfi_lvl_periodic: -1,
+      dfi_phymstr_ack: -1,
+      dfi_lp_ctrl_req: -1,
+      dfi_lp_data_req: -1,
+      dfi_lp_wakeup: -4,
+    },
+    //__________________________________________________________________//
+    "slave-APB4_rtl_ctrl": {
+      name: "c1_apb",
+      interfaceMode: "slave",
+      busType: {vendor: "amba.com", version: "r0p0_0", library: "AMBA4", name: "APB4"},
+      abstractionTypes: [
+        {
+          viewRef: "RTLview",
+          portMaps: {
+            PCLK    : "pclk",
+            PRESETn : "presetn",
+            PADDR   : "paddr",
+            PSEL    : "psel",
+            PENABLE : "penable",
+            PWRITE  : "pwrite",
+            PRDATA  : "prdata",
+            PWDATA  : "pwdata",
+            PPROT   : "pprot",
+            PSTRB   : "pstrb",
+            PREADY  : "pready",
+            PSLVERR : "pslverr"
+          }
+        }
+      ],
+    },
+    "slave-AXI4_rtl_ctrl": {
+      name: "c2_axi",
+      interfaceMode: "slave",
+      busType: { vendor: "amba.com", version: "r0p0_0", library: "AMBA4", name: "AXI4"},
+      abstractionTypes: [
+        {
+          viewRef: "RTLview",
+          portMaps: {
+            ACLK    : "p0_axi_clk",
+            ARESETn : "p0_axi_resetn",
+            AWID    : "p0_awid",
+            AWADDR  : "p0_awaddr",
+            AWLEN   : "p0_awlen",
+            AWSIZE  : "p0_awsize",
+            AWBURST : "p0_awburst",
+            AWLOCK  : "p0_awlock",
+            AWPROT  : "p0_awprot",
+            AWQOS   : "p0_awqos",
+            AWVALID : "p0_awvalid",
+            AWREADY : "p0_awready",
+            WDATA   : "p0_wdata",
+            WSTRB   : "p0_wstrb",
+            WLAST   : "p0_wlast",
+            WVALID  : "p0_wvalid",
+            WREADY  : "p0_wready",
+            BID     : "p0_bid",
+            BRESP   : "p0_bresp",
+            BVALID  : "p0_bvalid",
+            BREADY  : "p0_bready",
+            ARID    : "p0_arid",
+            ARADDR  : "p0_araddr",
+            ARLEN   : "p0_arlen",
+            ARSIZE  : "p0_arsize",
+            ARBURST : "p0_arburst",
+            ARLOCK  : "p0_arlock",
+            ARPROT  : "p0_arprot",
+            ARQOS   : "p0_arqos",
+            ARVALID : "p0_arvalid",
+            ARREADY : "p0_arready",
+            RID     : "p0_rid",
+            RDATA   : "p0_rdata",
+            RRESP   : "p0_rresp",
+            RLAST   : "p0_rlast",
+            RVALID  : "p0_rvalid",
+            RREADY  : "p0_rready"
+          }
+        }
+      ]
+    },
+    "intr": {
+      name: "irq",
+      interfaceMode: "master",
+      busType: {vendor: "sifive.com", version: "0.1.0", library: "free", name: "interrupts"},
+      abstractionTypes: [
+        {
+          viewRef: "RTLview",
+          portMaps: [
+            'asp_int',
+            'cooldown_int',
+            'hightemp_int',
+            'overtemp_int' 
+          ]
+        }
+      ],
+    },
+    "slave-bundle": {
+      name: "bundle",
+      interfaceMode: "slave",
+      busType: {vendor: "amba.com", version: "r0p0_0", library: "AMBA4", name: "APB4"},
+      abstractionTypes: [
+        {
+          viewRef: "RTLview",
+          portMaps: {
+            PCLK    : "pclk",
+            PRESETn : "presetn",
+            PADDR   : "paddr",
+            PSEL    : "psel",
+            PENABLE : "penable",
+            PWRITE  : "pwrite",
+            PRDATA  : "prdata",
+            PWDATA  : "pwdata",
+            PPROT   : "pprot",
+            PSTRB   : "pstrb",
+            PREADY  : "pready",
+            PSLVERR : "pslverr"
+          }
+        }
+      ],
+    },
+
+    //__________________________________________________________________//
+    addrSpaces: {
+      name: 'csrAddressSpace',
+      range: 1024,
+      width: 32
+    },
+
+    //__________________________________________________________________//
+    csrMemMap: {
+      name: 'CSR',
+      addressBlocks: [{
+        name: 'csrAddressBlock',
+        baseAddress: 0,
+        range: 1024, width: 32,
+        usage: 'register',
+        volatile: false, access: 'read-write',
+        registers: [
+          { name: 'REG_00', addressOffset:   0, size: 32, displayName: 'REG_00', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_01', addressOffset:   4, size: 32, displayName: 'REG_01', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_02', addressOffset:   8, size: 32, displayName: 'REG_02', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_03', addressOffset:  12, size: 32, displayName: 'REG_03', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_04', addressOffset:  16, size: 32, displayName: 'REG_04', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_05', addressOffset:  20, size: 32, displayName: 'REG_05', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_06', addressOffset:  24, size: 32, displayName: 'REG_06', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_07', addressOffset:  28, size: 32, displayName: 'REG_07', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_08', addressOffset:  32, size: 32, displayName: 'REG_08', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_09', addressOffset:  36, size: 32, displayName: 'REG_09', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_10', addressOffset:  40, size: 32, displayName: 'REG_10', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_11', addressOffset:  44, size: 32, displayName: 'REG_11', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_12', addressOffset:  48, size: 32, displayName: 'REG_12', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_13', addressOffset:  52, size: 32, displayName: 'REG_13', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_14', addressOffset:  56, size: 32, displayName: 'REG_14', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_15', addressOffset:  60, size: 32, displayName: 'REG_15', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-write', resetValue: 0}] },
+          { name: 'REG_16', addressOffset:  64, size: 32, displayName: 'REG_16', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_17', addressOffset:  68, size: 32, displayName: 'REG_17', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_18', addressOffset:  72, size: 32, displayName: 'REG_18', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_19', addressOffset:  76, size: 32, displayName: 'REG_19', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_20', addressOffset:  80, size: 32, displayName: 'REG_20', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_21', addressOffset:  84, size: 32, displayName: 'REG_21', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_22', addressOffset:  88, size: 32, displayName: 'REG_22', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_23', addressOffset:  92, size: 32, displayName: 'REG_23', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_24', addressOffset:  96, size: 32, displayName: 'REG_24', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_25', addressOffset: 100, size: 32, displayName: 'REG_25', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_26', addressOffset: 104, size: 32, displayName: 'REG_26', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_27', addressOffset: 108, size: 32, displayName: 'REG_27', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_28', addressOffset: 112, size: 32, displayName: 'REG_28', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_29', addressOffset: 116, size: 32, displayName: 'REG_29', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_30', addressOffset: 120, size: 32, displayName: 'REG_30', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] },
+          { name: 'REG_31', addressOffset: 124, size: 32, displayName: 'REG_31', fields: [{name: 'data', bitOffset: 0, bitWidth: 32, access: 'read-only'                }] }
+        ]
+      }]
+    }
+  }
+
+}

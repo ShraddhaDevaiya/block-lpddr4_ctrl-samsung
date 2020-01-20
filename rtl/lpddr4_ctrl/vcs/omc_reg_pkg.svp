@@ -1,0 +1,1423 @@
+//=============================================================================
+// Release information
+// Design version: sifive_sesame_rel3_190711
+// Document version: OMC-V1.4-UG-R2.11, OMC-V1.4-IG-R1.00-SESAME
+// Release generated at Thu Jul 11 15:30:19 2019
+//=============================================================================
+
+package omc_reg_pkg;
+  parameter OFFS_MC_CONFIG = 'h0;
+  parameter OFFS_MR_COMMAND_DATA = 'h4;
+  parameter OFFS_MR_COMMAND_RD_DATA = 'h8;
+  parameter OFFS_MR_COMMAND_RD_DATA2 = 'h18;
+  parameter OFFS_MR_COMMAND_CTRL = 'hc;
+  parameter OFFS_DRAM_COMMAND_DATA = 'h10;
+  parameter OFFS_DRAM_COMMAND_CTRL = 'h14;
+  parameter OFFS_DRAM_INIT_DONE = 'h20;
+  parameter OFFS_IP_PART_NUM = 'h30;
+  parameter OFFS_INT_TEST_CTRL = 'h40;
+  parameter OFFS_REFRESH_TYPE_0 = 'h100;
+  parameter OFFS_REFRESH_TYPE_1 = 'h900;
+  parameter OFFS_REFRESH_CTRL = 'h104;
+  parameter OFFS_TEMP_CTRL = 'h108;
+  parameter OFFS_MRR_BYTE_LANE = 'h10c;
+  parameter OFFS_TEMP_INT = 'h110;
+  parameter OFFS_TEMP_STATUS = 'h114;
+  parameter OFFS_MR4_INTERVAL = 'h118;
+  parameter OFFS_BYTE_LANE_INVERSION = 'h11c;
+  parameter OFFS_PER_TRAIN_CTRL0_0 = 'h200;
+  parameter OFFS_PER_TRAIN_CTRL0_1 = 'ha00;
+  parameter OFFS_PER_TRAIN_CTRL1_0 = 'h204;
+  parameter OFFS_PER_TRAIN_CTRL1_1 = 'ha04;
+  parameter OFFS_PER_TRAIN_STATUS = 'h208;
+  parameter OFFS_DFS_TRAIN_CTRL = 'h210;
+  parameter OFFS_DFS_TRAIN_STATUS = 'h214;
+  parameter OFFS_PWR_TRAIN_CTRL = 'h220;
+  parameter OFFS_PWR_TRAIN_STATUS = 'h224;
+  parameter OFFS_TRAIN_INFO_CLR = 'h22c;
+  parameter OFFS_CA_TRAIN_SW0 = 'h234;
+  parameter OFFS_CA_TRAIN_SW1 = 'h238;
+  parameter OFFS_CA_TRAIN_SW2 = 'h23c;
+  parameter OFFS_GATE_TRAIN_SW = 'h240;
+  parameter OFFS_RD_TRAIN_SW = 'h244;
+  parameter OFFS_WR_LEVEL_SW = 'h248;
+  parameter OFFS_WR_TRAIN_SW = 'h250;
+  parameter OFFS_SW_TRAIN_START = 'h25c;
+  parameter OFFS_WR_TRAIN_DATA0 = 'h270;
+  parameter OFFS_WR_TRAIN_DATA1 = 'h274;
+  parameter OFFS_WR_TRAIN_DATA2 = 'h278;
+  parameter OFFS_WR_TRAIN_DATA3 = 'h27c;
+  parameter OFFS_WR_TRAIN_DATA4 = 'h280;
+  parameter OFFS_WR_TRAIN_DATA5 = 'h284;
+  parameter OFFS_WR_TRAIN_DATA6 = 'h288;
+  parameter OFFS_WR_TRAIN_DATA7 = 'h28c;
+  parameter OFFS_WR_TRAIN_DMI = 'h290;
+  parameter OFFS_PCH_CTRL = 'h300;
+  parameter OFFS_PCH_FREQ_CTRL = 'h304;
+  parameter OFFS_PCH_SW_MODE = 'h308;
+  parameter OFFS_DFS_CTRL0 = 'h310;
+  parameter OFFS_DFS_CTRL1 = 'h314;
+  parameter OFFS_DFS_COMMAND_0 = 'h340;
+  parameter OFFS_DFS_COMMAND_1 = 'h348;
+  parameter OFFS_DFS_COMMAND_2 = 'h350;
+  parameter OFFS_DFS_COMMAND_3 = 'h358;
+  parameter OFFS_DFS_COMMAND_4 = 'h360;
+  parameter OFFS_DFS_COMMAND_5 = 'h368;
+  parameter OFFS_DFS_COMMAND_6 = 'h370;
+  parameter OFFS_DFS_COMMAND_7 = 'h378;
+  parameter OFFS_DFS_COMMAND_8 = 'h380;
+  parameter OFFS_DFS_COMMAND_9 = 'h388;
+  parameter OFFS_DFS_COMMAND_10 = 'h390;
+  parameter OFFS_DFS_COMMAND_11 = 'h398;
+  parameter OFFS_DFS_COMMAND_12 = 'h3a0;
+  parameter OFFS_DFS_COMMAND_13 = 'h3a8;
+  parameter OFFS_DFS_COMMAND_14 = 'h3b0;
+  parameter OFFS_DFS_COMMAND_15 = 'h3b8;
+  parameter OFFS_DFS_COMMAND_DELAY_0 = 'h344;
+  parameter OFFS_DFS_COMMAND_DELAY_1 = 'h34c;
+  parameter OFFS_DFS_COMMAND_DELAY_2 = 'h354;
+  parameter OFFS_DFS_COMMAND_DELAY_3 = 'h35c;
+  parameter OFFS_DFS_COMMAND_DELAY_4 = 'h364;
+  parameter OFFS_DFS_COMMAND_DELAY_5 = 'h36c;
+  parameter OFFS_DFS_COMMAND_DELAY_6 = 'h374;
+  parameter OFFS_DFS_COMMAND_DELAY_7 = 'h37c;
+  parameter OFFS_DFS_COMMAND_DELAY_8 = 'h384;
+  parameter OFFS_DFS_COMMAND_DELAY_9 = 'h38c;
+  parameter OFFS_DFS_COMMAND_DELAY_10 = 'h394;
+  parameter OFFS_DFS_COMMAND_DELAY_11 = 'h39c;
+  parameter OFFS_DFS_COMMAND_DELAY_12 = 'h3a4;
+  parameter OFFS_DFS_COMMAND_DELAY_13 = 'h3ac;
+  parameter OFFS_DFS_COMMAND_DELAY_14 = 'h3b4;
+  parameter OFFS_DFS_COMMAND_DELAY_15 = 'h3bc;
+  parameter OFFS_DRAMCLK_DISABLE_CTRL = 'h320;
+  parameter OFFS_DPWDN_DSR_CTRL = 'h324;
+  parameter OFFS_IN_SR_STATUS = 'h32c;
+  parameter OFFS_DCG_ENABLE = 'h330;
+  parameter OFFS_PHY_LP_CTRL = 'h334;
+  parameter OFFS_DEVICE_PWRSURGE = 'h338;
+  parameter OFFS_TKN_CTRL = 'h400;
+  parameter OFFS_LATENCY_CTRL = 'h410;
+  parameter OFFS_WR_MODE_CTRL0 = 'h420;
+  parameter OFFS_WR_MODE_CTRL1 = 'h424;
+  parameter OFFS_WR_MODE_CTRL2 = 'h428;
+  parameter OFFS_PAGE_POLICY = 'h42c;
+  parameter OFFS_URGENCY_CTRL_0 = 'h430;
+  parameter OFFS_URGENCY_CTRL_1 = 'hc30;
+  parameter OFFS_CONGEST_CTRL = 'h440;
+  parameter OFFS_PHY_CTRL = 'h500;
+  parameter OFFS_UPDATE_CTRL = 'h504;
+  parameter OFFS_ODT_CTRL = 'h508;
+  parameter OFFS_DRAM_RESET_CTRL = 'h50c;
+  parameter OFFS_PHYUPD_CTRL = 'h510;
+  parameter OFFS_PHY_CTRL2 = 'h514;
+  parameter OFFS_DFI_SIGNAL_GEN = 'h520;
+  parameter OFFS_DQ_IO_READ = 'h524;
+  parameter OFFS_REF_INTERVAL0 = 'h600;
+  parameter OFFS_REF_INTERVAL1 = 'h604;
+  parameter OFFS_REF_INTERVAL2 = 'h608;
+  parameter OFFS_REF_INTERVAL3 = 'h60c;
+  parameter OFFS_REF_INTERVAL4 = 'h610;
+  parameter OFFS_REF_INTERVAL5 = 'h614;
+  parameter OFFS_REF_INTERVAL6 = 'h618;
+  parameter OFFS_REF_INTERVAL7 = 'h61c;
+  parameter OFFS_TIMING_PARAM0_0 = 'h620;
+  parameter OFFS_TIMING_PARAM0_1 = 'he20;
+  parameter OFFS_TIMING_PARAM1_0 = 'h624;
+  parameter OFFS_TIMING_PARAM1_1 = 'he24;
+  parameter OFFS_TIMING_PARAM2_0 = 'h628;
+  parameter OFFS_TIMING_PARAM2_1 = 'he28;
+  parameter OFFS_TIMING_PARAM3_0 = 'h62c;
+  parameter OFFS_TIMING_PARAM3_1 = 'he2c;
+  parameter OFFS_TIMING_PARAM4_0 = 'h630;
+  parameter OFFS_TIMING_PARAM4_1 = 'he30;
+  parameter OFFS_TIMING_PARAM5_0 = 'h634;
+  parameter OFFS_TIMING_PARAM5_1 = 'he34;
+  parameter OFFS_TIMING_PARAM6_0 = 'h638;
+  parameter OFFS_TIMING_PARAM6_1 = 'he38;
+  parameter OFFS_TIMING_PARAM7_0 = 'h63c;
+  parameter OFFS_TIMING_PARAM7_1 = 'he3c;
+  parameter OFFS_TIMING_PARAM8_0 = 'h640;
+  parameter OFFS_TIMING_PARAM8_1 = 'he40;
+  parameter OFFS_TIMING_PARAM9_0 = 'h644;
+  parameter OFFS_TIMING_PARAM9_1 = 'he44;
+  parameter OFFS_TIMING_PARAM10_0 = 'h648;
+  parameter OFFS_TIMING_PARAM10_1 = 'he48;
+  parameter OFFS_TIMING_PARAM11_0 = 'h64c;
+  parameter OFFS_TIMING_PARAM11_1 = 'he4c;
+  parameter OFFS_TIMING_PARAM12_0 = 'h6c0;
+  parameter OFFS_TIMING_PARAM12_1 = 'hec0;
+  parameter OFFS_TIMING_PARAM13_0 = 'h6c4;
+  parameter OFFS_TIMING_PARAM13_1 = 'hec4;
+  parameter OFFS_TIMING_PARAM_DERATE0_0 = 'h650;
+  parameter OFFS_TIMING_PARAM_DERATE0_1 = 'he50;
+  parameter OFFS_TIMING_PARAM_DERATE1_0 = 'h654;
+  parameter OFFS_TIMING_PARAM_DERATE1_1 = 'he54;
+  parameter OFFS_TIMING_SCHEDULER_0 = 'h658;
+  parameter OFFS_TIMING_SCHEDULER_1 = 'he58;
+  parameter OFFS_TIMING_ZQCAL_0 = 'h65c;
+  parameter OFFS_TIMING_ZQCAL_1 = 'he5c;
+  parameter OFFS_TIMING_CONFIGURE_0 = 'h660;
+  parameter OFFS_TIMING_CONFIGURE_1 = 'he60;
+  parameter OFFS_TIMING_CATRAIN = 'h670;
+  parameter OFFS_TIMING_WRLVL = 'h674;
+  parameter OFFS_TIMING_PARAM_RCLK = 'h678;
+  parameter OFFS_DFI_TIMING_PARAM0_0 = 'h680;
+  parameter OFFS_DFI_TIMING_PARAM0_1 = 'he80;
+  parameter OFFS_DFI_TIMING_PARAM1_0 = 'h684;
+  parameter OFFS_DFI_TIMING_PARAM1_1 = 'he84;
+  parameter OFFS_DFI_TIMING_PARAM2_0 = 'h688;
+  parameter OFFS_DFI_TIMING_PARAM2_1 = 'he88;
+  parameter OFFS_DFI_TIMING_PARAM3_0 = 'h68c;
+  parameter OFFS_DFI_TIMING_PARAM3_1 = 'he8c;
+  parameter OFFS_DFI_TIMING_PARAM4_0 = 'h690;
+  parameter OFFS_DFI_TIMING_PARAM4_1 = 'he90;
+  parameter OFFS_DFI_TIMING_PARAM5_0 = 'h694;
+  parameter OFFS_DFI_TIMING_PARAM5_1 = 'he94;
+  parameter OFFS_DFI_TIMING_PARAM6_0 = 'h698;
+  parameter OFFS_DFI_TIMING_PARAM6_1 = 'he98;
+  parameter OFFS_DFI_TIMING_PARAM7_0 = 'h69c;
+  parameter OFFS_DFI_TIMING_PARAM7_1 = 'he9c;
+  parameter OFFS_DFI_TIMING_PARAM8_0 = 'h6a0;
+  parameter OFFS_DFI_TIMING_PARAM8_1 = 'hea0;
+  parameter OFFS_DFI_TIMING_PARAM9_0 = 'h6a4;
+  parameter OFFS_DFI_TIMING_PARAM9_1 = 'hea4;
+  parameter OFFS_DFI_TIMING_PARAM10_0 = 'h6a8;
+  parameter OFFS_DFI_TIMING_PARAM10_1 = 'hea8;
+  parameter OFFS_DFI_TIMING_PARAM11 = 'h6ac;
+  parameter OFFS_DFI_TIMING_PARAM12 = 'h6b0;
+  parameter OFFS_DFI_TIMING_PARAM13 = 'h6b4;
+  parameter OFFS_DBG_CTRL = 'h700;
+  parameter OFFS_MONITOR0_CTRL = 'h704;
+  parameter OFFS_MONITOR1_CTRL = 'h708;
+  parameter OFFS_MONITOR2_CTRL = 'h70c;
+  parameter OFFS_MONITOR3_CTRL = 'h710;
+  parameter OFFS_MON_SIGNAL = 'h714;
+  parameter OFFS_WRDATA_INFO = 'h720;
+  parameter OFFS_RDDATA_INFO = 'h724;
+  parameter OFFS_REQQ_INFO0 = 'h728;
+  parameter OFFS_REQQ_INFO1 = 'h72c;
+  parameter OFFS_PWR_INFO = 'h730;
+  parameter OFFS_PHY_INFO = 'h734;
+  parameter OFFS_RESERVED0 = 'h750;
+  parameter OFFS_RESERVED1 = 'h754;
+  parameter OFFS_HIDDEN_KEY0 = 'h760;
+  parameter OFFS_HIDDEN_KEY1 = 'h764;
+  parameter OFFS_HIDDEN_KEY2 = 'h768;
+  parameter OFFS_HIDDEN_KEY3 = 'h76c;
+  parameter OFFS_HIDDEN_INFO0 = 'h770;
+  parameter OFFS_EXT_EVEMON_SEL = 'h780;
+  parameter OFFS_EXT_EVEMON_ID = 'h784;
+  parameter OFFS_EXT_EVEMON_CTRL = 'h788;
+  parameter OFFS_EXT_EVEMON_TRIG_VAL1 = 'h78c;
+  parameter OFFS_EXT_EVEMON_TRIG_VAL2 = 'h790;
+  parameter OFFS_EXT_EVEMON_START = 'h794;
+  parameter OFFS_EXT_EVEMON_MON = 'h798;
+  parameter OFFS_EXT_EVEMON_CNT0 = 'h79c;
+  parameter OFFS_EXT_EVEMON_CNT1 = 'h7a0;
+  parameter OFFS_EXT_EVEMON_CNT2 = 'h7a4;
+  parameter OFFS_EXT_EVEMON_CNT3 = 'h7a8;
+  parameter OFFS_EXT_EVEMON_CNT4 = 'h7ac;
+  parameter OFFS_EXT_EVEMON_CNT5 = 'h7b0;
+  parameter OFFS_EXT_EVEMON_PAYLOAD = 'h7b4;
+
+  typedef struct packed {
+    logic [7:0]reserved0; //[31:24]
+    logic [7:0]cmd_delay; //[23:16]
+    logic pre_as_lp4revb; //[15:15]
+    logic prefer_cas; //[14:14]
+    logic read_phase; //[13:13]
+    logic fix_read_phase; //[12:12]
+    logic no_rdbuf_wrap; //[11:11]
+    logic ignore_phy_rresp; //[10:10]
+    logic turn_on_gear_down_mode; //[9:9]
+    logic bl_type; //[8:8]
+    logic [1:0]reserved1; //[7:6]
+    logic [1:0]dram_bit_width; //[5:4]
+    logic [3:0]dram_type; //[3:0]
+  } mc_config_t;
+
+  typedef struct packed {
+    logic [3:0]mr_command_cs; //[31:28]
+    logic [3:0]reserved0; //[27:24]
+    logic [7:0]mr_command_addr; //[23:16]
+    logic [15:0]mr_write_data; //[15:0]
+  } mr_command_data_t;
+
+  typedef struct packed {
+    logic [31:0]mr_read_data; //[31:0]
+  } mr_command_rd_data_t;
+
+  typedef struct packed {
+    logic [31:0]mr_read_data2; //[31:0]
+  } mr_command_rd_data2_t;
+
+  typedef struct packed {
+    logic [29:0]reserved0; //[31:2]
+    logic mr_write_start; //[1:1]
+    logic mr_read_start; //[0:0]
+  } mr_command_ctrl_t;
+
+  typedef struct packed {
+    logic dram_command_stable; //[31:31]
+    logic [1:0]reserved0; //[30:29]
+    logic [16:0]dram_row_addr; //[28:12]
+    logic [3:0]dram_bank_addr; //[11:8]
+    logic [3:0]dram_command_cs; //[7:4]
+    logic [3:0]dram_command; //[3:0]
+  } dram_command_data_t;
+
+  typedef struct packed {
+    logic dram_command_done; //[31:31]
+    logic [29:0]reserved0; //[30:1]
+    logic dram_command_start; //[0:0]
+  } dram_command_ctrl_t;
+
+  typedef struct packed {
+    logic [30:0]reserved0; //[31:1]
+    logic init_done; //[0:0]
+  } dram_init_done_t;
+
+  typedef struct packed {
+    logic [31:0]ip_part_num; //[31:0]
+  } ip_part_num_t;
+
+  typedef struct packed {
+    logic [5:0]reserved0; //[31:26]
+    logic [1:0]test_ecc_invalid_regionint; //[25:24]
+    logic [1:0]reserved1; //[23:22]
+    logic [1:0]test_ecc_secint; //[21:20]
+    logic [1:0]reserved2; //[19:18]
+    logic [1:0]test_ecc_dedint; //[17:16]
+    logic [1:0]reserved3; //[15:14]
+    logic [1:0]test_overtemp_int; //[13:12]
+    logic [1:0]reserved4; //[11:10]
+    logic [1:0]test_hightemp_int; //[9:8]
+    logic [1:0]reserved5; //[7:6]
+    logic [1:0]test_cooldown_int; //[5:4]
+    logic [3:0]reserved6; //[3:0]
+  } int_test_ctrl_t;
+
+  typedef struct packed {
+    logic [17:0]reserved0; //[31:14]
+    logic [1:0]per_2_bank; //[13:12]
+    logic reserved1; //[11:11]
+    logic [2:0]abr_granularity; //[10:8]
+    logic [7:0]abr_en; //[7:0]
+  } refresh_type_t;
+
+  typedef struct packed {
+    logic autoref_enable; //[31:31]
+    logic dfs_abr_disable; //[30:30]
+    logic sre_abr_disable; //[29:29]
+    logic adv_target_ref; //[28:28]
+    logic [11:0]reserved0; //[27:16]
+    logic [3:0]max_postponed_refs; //[15:12]
+    logic [3:0]max_pulled_in_refs; //[11:8]
+    logic [4:0]reserved1; //[7:3]
+    logic [2:0]num_dfs_abr; //[2:0]
+  } refresh_ctrl_t;
+
+  typedef struct packed {
+    logic overtemp_int_clr; //[31:31]
+    logic hightemp_int_clr; //[30:30]
+    logic cooldown_int_clr; //[29:29]
+    logic reserved0; //[28:28]
+    logic overtemp_int_en; //[27:27]
+    logic hightemp_int_en; //[26:26]
+    logic cooldown_int_en; //[25:25]
+    logic mr4_data_pos; //[24:24]
+    logic [1:0]reserved1; //[23:22]
+    logic [1:0]derate_param; //[21:20]
+    logic [2:0]reserved2; //[19:17]
+    logic mr4_periodic_en; //[16:16]
+    logic reserved3; //[15:15]
+    logic [2:0]refresh_rate_sw; //[14:12]
+    logic [4:0]reserved4; //[11:7]
+    logic [2:0]mr4_hightempint_set_val; //[6:4]
+    logic reserved5; //[3:3]
+    logic [2:0]mr4_cooldownint_set_val; //[2:0]
+  } temp_ctrl_t;
+
+  typedef struct packed {
+    logic [3:0][7:0]mrr_byte_lane; //[31:0]
+  } mrr_byte_lane_t;
+
+  typedef struct packed {
+    logic overtemp_int; //[31:31]
+    logic hightemp_int; //[30:30]
+    logic cooldown_int; //[29:29]
+    logic [28:0]reserved0; //[28:0]
+  } temp_int_t;
+
+  typedef struct packed {
+    logic [12:0]reserved0; //[31:19]
+    logic [2:0]mr4_final; //[18:16]
+    logic reserved1; //[15:15]
+    logic [2:0]mr4_chip3; //[14:12]
+    logic reserved2; //[11:11]
+    logic [2:0]mr4_chip2; //[10:8]
+    logic reserved3; //[7:7]
+    logic [2:0]mr4_chip1; //[6:4]
+    logic reserved4; //[3:3]
+    logic [2:0]mr4_chip0; //[2:0]
+  } temp_status_t;
+
+  typedef struct packed {
+    logic [15:0]reserved0; //[31:16]
+    logic [15:0]mr4_interval; //[15:0]
+  } mr4_interval_t;
+
+  typedef struct packed {
+    logic [3:0][7:0]byte_lane_inversion; //[31:0]
+  } byte_lane_inversion_t;
+
+  typedef struct packed {
+    logic per_zqcal_periodic_type; //[31:31]
+    logic per_gatetrain_periodic_type; //[30:30]
+    logic per_rdtrain_periodic_type; //[29:29]
+    logic per_wrtrain_periodic_type; //[28:28]
+    logic reserved0; //[27:27]
+    logic per_gatetrain_wo_sre; //[26:26]
+    logic per_rdtrain_wo_sre; //[25:25]
+    logic per_wrtrain_wo_sre; //[24:24]
+    logic [3:0]per_rdtrain_pattern; //[23:20]
+    logic reserved1; //[19:19]
+    logic [2:0]per_wrtrain_bst; //[18:16]
+    logic [3:0]per_zqcal_en; //[15:12]
+    logic [3:0]per_gatetrain_en; //[11:8]
+    logic [3:0]per_rdtrain_en; //[7:4]
+    logic [3:0]per_wrtrain_en; //[3:0]
+  } per_train_ctrl0_t;
+
+  typedef struct packed {
+    logic [15:0]per_zqcal_interval; //[31:16]
+    logic [15:0]per_training_interval; //[15:0]
+  } per_train_ctrl1_t;
+
+  typedef struct packed {
+    logic [3:0]per_train_state; //[31:28]
+    logic [7:0]reserved0; //[27:20]
+    logic [3:0]per_gatetrain_timeout; //[19:16]
+    logic [3:0]reserved1; //[15:12]
+    logic [3:0]per_rdtrain_timeout; //[11:8]
+    logic [3:0]reserved2; //[7:4]
+    logic [3:0]per_wrtrain_timeout; //[3:0]
+  } per_train_status_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic dfs_gatetrain_periodic_type; //[30:30]
+    logic dfs_rdtrain_periodic_type; //[29:29]
+    logic dfs_wrtrain_periodic_type; //[28:28]
+    logic [3:0]reserved1; //[27:24]
+    logic [3:0]dfs_rdtrain_pattern; //[23:20]
+    logic reserved2; //[19:19]
+    logic [2:0]dfs_wrtrain_bst; //[18:16]
+    logic [3:0]reserved3; //[15:12]
+    logic [3:0]dfs_gatetrain_en; //[11:8]
+    logic [3:0]dfs_rdtrain_en; //[7:4]
+    logic [3:0]dfs_wrtrain_en; //[3:0]
+  } dfs_train_ctrl_t;
+
+  typedef struct packed {
+    logic [3:0]dfs_state_info; //[31:28]
+    logic [7:0]reserved0; //[27:20]
+    logic [3:0]dfs_gatetrain_timeout; //[19:16]
+    logic [3:0]reserved1; //[15:12]
+    logic [3:0]dfs_rdtrain_timeout; //[11:8]
+    logic [3:0]reserved2; //[7:4]
+    logic [3:0]dfs_wrtrain_timeout; //[3:0]
+  } dfs_train_status_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic pwr_gatetrain_periodic_type; //[30:30]
+    logic pwr_rdtrain_periodic_type; //[29:29]
+    logic pwr_wrtrain_periodic_type; //[28:28]
+    logic [3:0]reserved1; //[27:24]
+    logic [3:0]pwr_rdtrain_pattern; //[23:20]
+    logic reserved2; //[19:19]
+    logic [2:0]pwr_wrtrain_bst; //[18:16]
+    logic [3:0]pwr_zqcal_en; //[15:12]
+    logic [3:0]pwr_gatetrain_en; //[11:8]
+    logic [3:0]pwr_rdtrain_en; //[7:4]
+    logic [3:0]pwr_wrtrain_en; //[3:0]
+  } pwr_train_ctrl_t;
+
+  typedef struct packed {
+    logic [3:0]pwr_state_info; //[31:28]
+    logic [7:0]reserved0; //[27:20]
+    logic [3:0]pwr_gatetrain_timeout; //[19:16]
+    logic [3:0]reserved1; //[15:12]
+    logic [3:0]pwr_rdtrain_timeout; //[11:8]
+    logic [3:0]reserved2; //[7:4]
+    logic [3:0]pwr_wrtrain_timeout; //[3:0]
+  } pwr_train_status_t;
+
+  typedef struct packed {
+    logic [27:0]reserved0; //[31:4]
+    logic sw_info_clr; //[3:3]
+    logic per_info_clr; //[2:2]
+    logic dfs_info_clr; //[1:1]
+    logic pwr_info_clr; //[0:0]
+  } train_info_clr_t;
+
+  typedef struct packed {
+    logic [3:0]calvl_en; //[31:28]
+    logic calvl_periodic; //[27:27]
+    logic [7:0]reserved0; //[26:19]
+    logic [2:0]calvl_strobe_num; //[18:16]
+    logic [7:0]calvl_best_vref; //[15:8]
+    logic [2:0]reserved1; //[7:5]
+    logic calvl_timeout; //[4:4]
+    logic [3:0]calvl_resp; //[3:0]
+  } ca_train_sw0_t;
+
+  typedef struct packed {
+    logic [5:0]reserved0; //[31:26]
+    logic [9:0]calvl_bg_pattern; //[25:16]
+    logic [5:0]reserved1; //[15:10]
+    logic [9:0]calvl_cmd_pattern; //[9:0]
+  } ca_train_sw1_t;
+
+  typedef struct packed {
+    logic [7:0]reserved0; //[31:24]
+    logic [7:0]calvl_vref_step; //[23:16]
+    logic [7:0]calvl_vref_max; //[15:8]
+    logic [7:0]calvl_vref_min; //[7:0]
+  } ca_train_sw2_t;
+
+  typedef struct packed {
+    logic [3:0]gatetrain_en; //[31:28]
+    logic gatetrain_periodic; //[27:27]
+    logic gatetrain_pattern; //[26:26]
+    logic [20:0]reserved0; //[25:5]
+    logic gatelvl_timeout; //[4:4]
+    logic [3:0]gatelvl_resp; //[3:0]
+  } gate_train_sw_t;
+
+  typedef struct packed {
+    logic [3:0]rdtrain_en; //[31:28]
+    logic rdtrain_periodic; //[27:27]
+    logic [6:0]reserved0; //[26:20]
+    logic [7:0]dfi_rdlvl_resp; //[19:12]
+    logic [3:0]rdtrain_pattern; //[11:8]
+    logic [2:0]reserved1; //[7:5]
+    logic rdtrain_timeout; //[4:4]
+    logic [3:0]rdtrain_resp; //[3:0]
+  } rd_train_sw_t;
+
+  typedef struct packed {
+    logic [3:0]wrlvl_en; //[31:28]
+    logic wrlvl_periodic; //[27:27]
+    logic [3:0]reserved0; //[26:23]
+    logic [6:0]wrlvl_mrs_data; //[22:16]
+    logic [4:0]reserved1; //[15:11]
+    logic [2:0]wrlvl_strobe_num; //[10:8]
+    logic [2:0]reserved2; //[7:5]
+    logic wrlvl_timeout; //[4:4]
+    logic [3:0]wrlvl_resp; //[3:0]
+  } wr_level_sw_t;
+
+  typedef struct packed {
+    logic [3:0]wrtrain_en; //[31:28]
+    logic wrtrain_periodic; //[27:27]
+    logic [15:0]reserved0; //[26:11]
+    logic [2:0]wrtrain_bst; //[10:8]
+    logic [2:0]reserved1; //[7:5]
+    logic wrtrain_timeout; //[4:4]
+    logic [3:0]wrtrain_resp; //[3:0]
+  } wr_train_sw_t;
+
+  typedef struct packed {
+    logic sw_ca_train_wait; //[31:31]
+    logic [24:0]reserved0; //[30:6]
+    logic sw_ca_train_continue; //[5:5]
+    logic sw_ca_train_start; //[4:4]
+    logic sw_wr_train_start; //[3:3]
+    logic sw_wr_level_start; //[2:2]
+    logic sw_rd_train_start; //[1:1]
+    logic sw_gate_train_start; //[0:0]
+  } sw_train_start_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl1; //[31:16]
+    logic [15:0]wdqlvl_data_bl0; //[15:0]
+  } wr_train_data0_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl3; //[31:16]
+    logic [15:0]wdqlvl_data_bl2; //[15:0]
+  } wr_train_data1_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl5; //[31:16]
+    logic [15:0]wdqlvl_data_bl4; //[15:0]
+  } wr_train_data2_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl7; //[31:16]
+    logic [15:0]wdqlvl_data_bl6; //[15:0]
+  } wr_train_data3_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl9; //[31:16]
+    logic [15:0]wdqlvl_data_bl8; //[15:0]
+  } wr_train_data4_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl11; //[31:16]
+    logic [15:0]wdqlvl_data_bl10; //[15:0]
+  } wr_train_data5_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl13; //[31:16]
+    logic [15:0]wdqlvl_data_bl12; //[15:0]
+  } wr_train_data6_t;
+
+  typedef struct packed {
+    logic [15:0]wdqlvl_data_bl15; //[31:16]
+    logic [15:0]wdqlvl_data_bl14; //[15:0]
+  } wr_train_data7_t;
+
+  typedef struct packed {
+    logic [1:0]wdqlvl_dmi_bl15; //[31:30]
+    logic [1:0]wdqlvl_dmi_bl14; //[29:28]
+    logic [1:0]wdqlvl_dmi_bl13; //[27:26]
+    logic [1:0]wdqlvl_dmi_bl12; //[25:24]
+    logic [1:0]wdqlvl_dmi_bl11; //[23:22]
+    logic [1:0]wdqlvl_dmi_bl10; //[21:20]
+    logic [1:0]wdqlvl_dmi_bl9; //[19:18]
+    logic [1:0]wdqlvl_dmi_bl8; //[17:16]
+    logic [1:0]wdqlvl_dmi_bl7; //[15:14]
+    logic [1:0]wdqlvl_dmi_bl6; //[13:12]
+    logic [1:0]wdqlvl_dmi_bl5; //[11:10]
+    logic [1:0]wdqlvl_dmi_bl4; //[9:8]
+    logic [1:0]wdqlvl_dmi_bl3; //[7:6]
+    logic [1:0]wdqlvl_dmi_bl2; //[5:4]
+    logic [1:0]wdqlvl_dmi_bl1; //[3:2]
+    logic [1:0]wdqlvl_dmi_bl0; //[1:0]
+  } wr_train_dmi_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [2:0]pch_state; //[30:28]
+    logic reserved1; //[27:27]
+    logic [2:0]cur_pstate; //[26:24]
+    logic [1:0]reserved2; //[23:22]
+    logic dfs_allow_dcmd; //[21:21]
+    logic pwr_allow_apb; //[20:20]
+    logic pch_deny_flag; //[19:19]
+    logic pch_run; //[18:18]
+    logic pch_deny_flag_clr; //[17:17]
+    logic pdeny_en; //[16:16]
+    logic [15:0]preq_assert_th; //[15:0]
+  } pch_ctrl_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic rcg_dfi_init_start_toggle; //[30:30]
+    logic [1:0]pwr_dfi_init_start_ctrl; //[29:28]
+    logic [14:0]reserved1; //[27:13]
+    logic [4:0]pwr_dfi_frequency_exit; //[12:8]
+    logic [2:0]reserved2; //[7:5]
+    logic [4:0]pwr_dfi_frequency_enter; //[4:0]
+  } pch_freq_ctrl_t;
+
+  typedef struct packed {
+    logic pch_sw_mode_en; //[31:31]
+    logic [13:0]reserved0; //[30:17]
+    logic skip_apb_idle_pwrmode; //[16:16]
+    logic [5:0]reserved1; //[15:10]
+    logic pwr_op_end; //[9:9]
+    logic pwr_op_ack; //[8:8]
+    logic [5:0]reserved2; //[7:2]
+    logic dfs_op_end; //[1:1]
+    logic dfs_op_ack; //[0:0]
+  } pch_sw_mode_t;
+
+  typedef struct packed {
+    logic dfs_timing_param_force; //[31:31]
+    logic dfs_timing_param_sel; //[30:30]
+    logic reserved0; //[29:29]
+    logic [4:0]dfs_dfi_frequency; //[28:24]
+    logic [17:0]reserved1; //[23:6]
+    logic dfs_sre_enable; //[5:5]
+    logic dfs_dfi_init_start_toggle; //[4:4]
+    logic [3:0]reserved2; //[3:0]
+  } dfs_ctrl0_t;
+
+  typedef struct packed {
+    logic dfs_postpone_en; //[31:31]
+    logic [5:0]reserved0; //[30:25]
+    logic dfs_postpone_flag; //[24:24]
+    logic [2:0]reserved1; //[23:21]
+    logic dfs_postpone_flag_clr; //[20:20]
+    logic [3:0]reserved2; //[19:16]
+    logic [15:0]dfs_train_interval; //[15:0]
+  } dfs_ctrl1_t;
+
+  typedef struct packed {
+    logic dfs_cmd_entry_valid; //[31:31]
+    logic dfs_cmd_issue_pre; //[30:30]
+    logic dfs_cmd_serial; //[29:29]
+    logic [2:0]reserved0; //[28:26]
+    logic [1:0]dfs_cmd_type; //[25:24]
+    logic [7:0]dfs_cmd_addr; //[23:16]
+    logic [15:0]dfs_cmd_data; //[15:0]
+  } dfs_command_t;
+
+  typedef struct packed {
+    logic [1:0]dfs_cmd_delay_clk; //[31:30]
+    logic [13:0]reserved0; //[29:16]
+    logic [15:0]dfs_cmd_delay; //[15:0]
+  } dfs_command_delay_t;
+
+  typedef struct packed {
+    logic dramclk_gate_enable; //[31:31]
+    logic [30:0]reserved0; //[30:0]
+  } dramclk_disable_ctrl_t;
+
+  typedef struct packed {
+    logic dpwdn_enable; //[31:31]
+    logic prech_pwrdn; //[30:30]
+    logic single_cke; //[29:29]
+    logic [12:0]reserved0; //[28:16]
+    logic dsr_enable; //[15:15]
+    logic zqcal_after_srx; //[14:14]
+    logic [1:0]aref_between_srefs; //[13:12]
+    logic [11:0]reserved1; //[11:0]
+  } dpwdn_dsr_ctrl_t;
+
+  typedef struct packed {
+    logic [27:0]reserved0; //[31:4]
+    logic [3:0]in_sr_status; //[3:0]
+  } in_sr_status_t;
+
+  typedef struct packed {
+    logic rcg_enable; //[31:31]
+    logic phy_cg_en; //[30:30]
+    logic pad_driver_pwroff_en; //[29:29]
+    logic dram_clk_gate; //[28:28]
+    logic fifosync_clk_gate_en; //[27:27]
+    logic [1:0]reserved0; //[26:25]
+    logic busif_clk_gate_en; //[24:24]
+    logic [1:0]reserved1; //[23:22]
+    logic dfiupd_clk_gate_en; //[21:21]
+    logic dfilp_clk_gate_en; //[20:20]
+    logic [2:0]reserved2; //[19:17]
+    logic sch_ppm_clk_gate_en; //[16:16]
+    logic [3:0]sch_dm_clk_gate_en; //[15:12]
+    logic sch_dm_top_clk_gate_en; //[11:11]
+    logic sch_tr_clk_gate_en; //[10:10]
+    logic sch_reqq_clk_gate_en; //[9:9]
+    logic sch_clk_gate_en; //[8:8]
+    logic dfitrain_clk_gate_en; //[7:7]
+    logic dfictrl_clk_gate_en; //[6:6]
+    logic dfiwr_clk_gate_en; //[5:5]
+    logic dfird_clk_gate_en; //[4:4]
+    logic wdq_clk_gate_en; //[3:3]
+    logic rdq_clk_gate_en; //[2:2]
+    logic pwr_clk_gate_en; //[1:1]
+    logic apb_clk_gate_en; //[0:0]
+  } dcg_enable_t;
+
+  typedef struct packed {
+    logic [19:0]reserved0; //[31:12]
+    logic [3:0]update_delay_cnt; //[11:8]
+    logic [3:0]reserved1; //[7:4]
+    logic [3:0]cmd_delay_cnt; //[3:0]
+  } phy_lp_ctrl_t;
+
+  typedef struct packed {
+    logic [28:0]reserved0; //[31:3]
+    logic ranks_trefdpr; //[2:2]
+    logic ranks_trrd; //[1:1]
+    logic ranks_tfaw; //[0:0]
+  } device_pwrsurge_t;
+
+  typedef struct packed {
+    logic [31:0]tkn_ctrl; //[31:0]
+  } tkn_ctrl_t;
+
+  typedef struct packed {
+    logic [8:0]reserved0; //[31:23]
+    logic [6:0]generation_size; //[22:16]
+    logic reserved1; //[15:15]
+    logic [6:0]oldest_num_sched_th; //[14:8]
+    logic reserved2; //[7:7]
+    logic [6:0]bypass_cnt_th; //[6:0]
+  } latency_ctrl_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [6:0]wr_flush_exit_th; //[30:24]
+    logic reserved1; //[23:23]
+    logic [6:0]wr_flush_enter_th; //[22:16]
+    logic reserved2; //[15:15]
+    logic [6:0]delay_wrexit_wr_th; //[14:8]
+    logic reserved3; //[7:7]
+    logic [6:0]delay_wrexit_rd_th; //[6:0]
+  } wr_mode_ctrl0_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [6:0]min_strong_rdcas_sched_th; //[30:24]
+    logic reserved1; //[23:23]
+    logic [6:0]min_rdcas_sched_th; //[22:16]
+    logic reserved2; //[15:15]
+    logic [6:0]min_strong_wrcas_sched_th; //[14:8]
+    logic reserved3; //[7:7]
+    logic [6:0]min_wrcas_sched_th; //[6:0]
+  } wr_mode_ctrl1_t;
+
+  typedef struct packed {
+    logic nodelay_wrexit_surgent; //[31:31]
+    logic [23:0]reserved0; //[30:7]
+    logic [6:0]zero_rd_req_cycle_th; //[6:0]
+  } wr_mode_ctrl2_t;
+
+  typedef struct packed {
+    logic timeout_pre_en; //[31:31]
+    logic dormant_pre_en; //[30:30]
+    logic preemptive_pre_en; //[29:29]
+    logic nopagehit_pre_en; //[28:28]
+    logic blk_pre_pre_by_highest; //[27:27]
+    logic [10:0]reserved0; //[26:16]
+    logic [15:0]timeout_pre_th; //[15:0]
+  } page_policy_t;
+
+  typedef struct packed {
+    logic delay_urgent_en; //[31:31]
+    logic [4:0]reserved0; //[30:26]
+    logic [9:0]weak_urgent_delay_cyc; //[25:16]
+    logic [5:0]reserved1; //[15:10]
+    logic [9:0]strong_urgent_delay_cyc; //[9:0]
+  } urgency_ctrl_t;
+
+  typedef struct packed {
+    logic [7:0]reserved0; //[31:24]
+    logic [7:0]reqq_hysteresis; //[23:16]
+    logic [7:0]reserved1; //[15:8]
+    logic [7:0]reqq_threshold; //[7:0]
+  } congest_ctrl_t;
+
+  typedef struct packed {
+    logic [15:0]ctrlupd_req_timer; //[31:16]
+    logic fifosync_clr_en; //[15:15]
+    logic reserved0; //[14:14]
+    logic [1:0]fifosync_ptr_dis; //[13:12]
+    logic fifosync_ptr_clr; //[11:11]
+    logic fifosync_ptr_clr_no_ctrlupd; //[10:10]
+    logic retimer_rddata; //[9:9]
+    logic ca_inversion; //[8:8]
+    logic train_en_ctrl; //[7:7]
+    logic train_no_cmd; //[6:6]
+    logic [1:0]lp_handshake_en; //[5:4]
+    logic [1:0]reserved1; //[3:2]
+    logic [1:0]freq_ratio; //[1:0]
+  } phy_ctrl_t;
+
+  typedef struct packed {
+    logic dfi_init_complete; //[31:31]
+    logic dfi_init_start; //[30:30]
+    logic disable_wait_update; //[29:29]
+    logic reserved0; //[28:28]
+    logic rcg_ctrlupd_en; //[27:27]
+    logic pwr_ctrlupd_en; //[26:26]
+    logic dfs_ctrlupd_en; //[25:25]
+    logic srx_ctrlupd_en; //[24:24]
+    logic update_op_run; //[23:23]
+    logic ctrlupd_max_time_err; //[22:22]
+    logic ctrlupd_min_time_err; //[21:21]
+    logic ctrlupd_done; //[20:20]
+    logic [2:0]reserved1; //[19:17]
+    logic ctrlupd_start; //[16:16]
+    logic [15:0]srx_ctrlupd_timer; //[15:0]
+  } update_ctrl_t;
+
+  typedef struct packed {
+    logic [23:0]reserved0; //[31:8]
+    logic [3:0]fixed_odt_cs; //[7:4]
+    logic [1:0]reserved1; //[3:2]
+    logic [1:0]odt_type; //[1:0]
+  } odt_ctrl_t;
+
+  typedef struct packed {
+    logic [30:0]reserved0; //[31:1]
+    logic dram_rst_n; //[0:0]
+  } dram_reset_ctrl_t;
+
+  typedef struct packed {
+    logic [3:0]idleop_dis_phyupd_type; //[31:28]
+    logic idleop_dis_ctrlupd; //[27:27]
+    logic igr_phyupd_pwr; //[26:26]
+    logic igr_phyupd_rcg; //[25:25]
+    logic igr_phyupd_dfs; //[24:24]
+    logic [7:0]phyupd_req_dis_cnt; //[23:16]
+    logic [3:0]phyupd_ack_deassert_cnt; //[15:12]
+    logic alw_phyupd_init_start; //[11:11]
+    logic [2:0]num_phyupd_abr; //[10:8]
+    logic [3:0][1:0]phyupd_op_type; //[7:0]
+  } phyupd_ctrl_t;
+
+  typedef struct packed {
+    logic [1:0]pwr_phyupd_en; //[31:30]
+    logic [5:0]reserved0; //[29:24]
+    logic [7:0]block_sched_cnt; //[23:16]
+    logic [8:0]reserved1; //[15:7]
+    logic upd_lowpwr_op_en; //[6:6]
+    logic pch_lowpwr_op_en; //[5:5]
+    logic init_lowpwr_op_en; //[4:4]
+    logic [1:0]reserved2; //[3:2]
+    logic phyupd_rddata_valid; //[1:1]
+    logic phymstr_rddata_valid; //[0:0]
+  } phy_ctrl2_t;
+
+  typedef struct packed {
+    logic [1:0]reserved0; //[31:30]
+    logic wrdata_en_p1_gen; //[29:29]
+    logic wrdata_en_p0_gen; //[28:28]
+    logic [1:0]cke_p1_gen; //[27:26]
+    logic [1:0]cke_p0_gen; //[25:24]
+    logic cs_pulse_gen; //[23:23]
+    logic reserved1; //[22:22]
+    logic [1:0]cs_rank_sel; //[21:20]
+    logic [19:0]address_gen; //[19:0]
+  } dfi_signal_gen_t;
+
+  typedef struct packed {
+    logic [31:0]dq_io_rdata; //[31:0]
+  } dq_io_read_t;
+
+  typedef struct packed {
+    logic [15:0]t_refipb; //[31:16]
+    logic [15:0]t_refiab; //[15:0]
+  } ref_interval_t;
+
+  typedef struct packed {
+    logic [7:0]t_ckckeh; //[31:24]
+    logic [4:0]reserved0; //[23:19]
+    logic [2:0]t_cmdcke; //[18:16]
+    logic [1:0]reserved1; //[15:14]
+    logic [5:0]t_rppb; //[13:8]
+    logic [1:0]reserved2; //[7:6]
+    logic [5:0]t_rpab; //[5:0]
+  } timing_param0_t;
+
+  typedef struct packed {
+    logic [2:0]reserved0; //[31:29]
+    logic [4:0]t_cke; //[28:24]
+    logic [1:0]reserved1; //[23:22]
+    logic [5:0]t_ckesr; //[21:16]
+    logic [2:0]reserved2; //[15:13]
+    logic [4:0]t_ckelck; //[12:8]
+    logic [2:0]reserved3; //[7:5]
+    logic [4:0]t_xp; //[4:0]
+  } timing_param1_t;
+
+  typedef struct packed {
+    logic [7:0]t_rc; //[31:24]
+    logic reserved0; //[23:23]
+    logic [6:0]t_ras; //[22:16]
+    logic [1:0]reserved1; //[15:14]
+    logic [5:0]t_rtp; //[13:8]
+    logic adv_al; //[7:7]
+    logic reserved2; //[6:6]
+    logic [5:0]t_rcd; //[5:0]
+  } timing_param2_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [6:0]t_wr_a; //[30:24]
+    logic [1:0]reserved1; //[23:22]
+    logic [5:0]t_wtr_a; //[21:16]
+    logic [2:0]reserved2; //[15:13]
+    logic [4:0]t_rrd; //[12:8]
+    logic reserved3; //[7:7]
+    logic [6:0]t_faw; //[6:0]
+  } timing_param3_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [6:0]t_rtrrd; //[30:24]
+    logic [1:0]reserved1; //[23:22]
+    logic [5:0]t_wrwtr; //[21:16]
+    logic [1:0]reserved2; //[15:14]
+    logic [5:0]read_latency; //[13:8]
+    logic [1:0]reserved3; //[7:6]
+    logic [5:0]write_latency; //[5:0]
+  } timing_param4_t;
+
+  typedef struct packed {
+    logic write_odt_en; //[31:31]
+    logic [4:0]reserved0; //[30:26]
+    logic wr_dbi_en; //[25:25]
+    logic rd_dbi_en; //[24:24]
+    logic [1:0]reserved1; //[23:22]
+    logic [5:0]t_rtw; //[21:16]
+    logic reserved2; //[15:15]
+    logic [6:0]odtl_on; //[14:8]
+    logic reserved3; //[7:7]
+    logic [6:0]odtl_off; //[6:0]
+  } timing_param5_t;
+
+  typedef struct packed {
+    logic [1:0]reserved0; //[31:30]
+    logic [5:0]t_ccdmw; //[29:24]
+    logic [1:0]reserved1; //[23:22]
+    logic [5:0]t_mrw; //[21:16]
+    logic [1:0]reserved2; //[15:14]
+    logic [5:0]t_mrd; //[13:8]
+    logic [3:0]reserved3; //[7:4]
+    logic [3:0]t_mrr; //[3:0]
+  } timing_param6_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [6:0]t_rdidle; //[30:24]
+    logic [3:0]n_add_wr_p; //[23:20]
+    logic [3:0]t_add_wr_p; //[19:16]
+    logic [3:0]reserved1; //[15:12]
+    logic [3:0]t_wtwcr; //[11:8]
+    logic [3:0]reserved2; //[7:4]
+    logic [3:0]t_rtrcr; //[3:0]
+  } timing_param7_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [2:0]t_ccd_gap; //[30:28]
+    logic [1:0]reserved1; //[27:26]
+    logic [9:0]t_xsr; //[25:16]
+    logic reserved2; //[15:15]
+    logic [6:0]t_xp_mrri; //[14:8]
+    logic [7:0]t_refdpr; //[7:0]
+  } timing_param8_t;
+
+  typedef struct packed {
+    logic [3:0]t_wtrcr; //[31:28]
+    logic [2:0]reserved0; //[27:25]
+    logic [8:0]t_rfcpb; //[24:16]
+    logic [5:0]reserved1; //[15:10]
+    logic [9:0]t_rfcab; //[9:0]
+  } timing_param9_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [10:0]t_xsdll; //[30:20]
+    logic [2:0]reserved1; //[19:17]
+    logic [8:0]t_xs_fast; //[16:8]
+    logic [7:0]t_pbr2pbr; //[7:0]
+  } timing_param10_t;
+
+  typedef struct packed {
+    logic [9:0]reserved0; //[31:22]
+    logic [5:0]n_rtp; //[21:16]
+    logic reserved1; //[15:15]
+    logic [6:0]n_wr_a; //[14:8]
+    logic [1:0]reserved2; //[7:6]
+    logic [5:0]n_wr; //[5:0]
+  } timing_param11_t;
+
+  typedef struct packed {
+    logic [9:0]reserved0; //[31:22]
+    logic [5:0]t_wtr_a_l; //[21:16]
+    logic [3:0]reserved1; //[15:12]
+    logic [3:0]t_rrd_l; //[11:8]
+    logic [3:0]reserved2; //[7:4]
+    logic [3:0]t_ccd_l; //[3:0]
+  } timing_param12_t;
+
+  typedef struct packed {
+    logic [1:0]command_rate; //[31:30]
+    logic [6:0]reserved0; //[29:23]
+    logic [6:0]t_parity_wait; //[22:16]
+    logic [1:0]reserved1; //[15:14]
+    logic [5:0]t_cmd_gear; //[13:8]
+    logic [1:0]reserved2; //[7:6]
+    logic [5:0]t_sync_gear; //[5:0]
+  } timing_param13_t;
+
+  typedef struct packed {
+    logic [1:0]reserved0; //[31:30]
+    logic [5:0]t_rcd_derate; //[29:24]
+    logic [7:0]t_rc_derate; //[23:16]
+    logic reserved1; //[15:15]
+    logic [6:0]t_ras_derate; //[14:8]
+    logic [2:0]reserved2; //[7:5]
+    logic [4:0]t_rrd_derate; //[4:0]
+  } timing_param_derate0_t;
+
+  typedef struct packed {
+    logic [17:0]reserved0; //[31:14]
+    logic [5:0]t_rpab_derate; //[13:8]
+    logic [1:0]reserved1; //[7:6]
+    logic [5:0]t_rppb_derate; //[5:0]
+  } timing_param_derate1_t;
+
+  typedef struct packed {
+    logic [19:0]reserved0; //[31:12]
+    logic [11:0]delay_wrexit_cyc_th; //[11:0]
+  } timing_scheduler_t;
+
+  typedef struct packed {
+    logic [7:0]reserved0; //[31:24]
+    logic [7:0]t_zqcs; //[23:16]
+    logic [5:0]reserved1; //[15:10]
+    logic [9:0]t_zqcl; //[9:0]
+  } timing_zqcal_t;
+
+  typedef struct packed {
+    logic [15:0]pwdn_entry_th; //[31:16]
+    logic [15:0]sr_entry_th; //[15:0]
+  } timing_configure_t;
+
+  typedef struct packed {
+    logic [25:0]reserved0; //[31:6]
+    logic [5:0]t_ca_param; //[5:0]
+  } timing_catrain_t;
+
+  typedef struct packed {
+    logic [1:0]reserved0; //[31:30]
+    logic [5:0]t_wldqsen; //[29:24]
+    logic [8:0]reserved1; //[23:15]
+    logic [6:0]t_wlmrd; //[14:8]
+    logic [1:0]reserved2; //[7:6]
+    logic [5:0]t_wlo; //[5:0]
+  } timing_wrlvl_t;
+
+  typedef struct packed {
+    logic [19:0]reserved0; //[31:12]
+    logic [11:0]t_zqcal; //[11:0]
+  } timing_param_rclk_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [6:0]dfi_tphy_rdcslat; //[30:24]
+    logic reserved1; //[23:23]
+    logic [6:0]dfi_tphy_rdcsgap; //[22:16]
+    logic reserved2; //[15:15]
+    logic [6:0]dfi_tphy_rdlat; //[14:8]
+    logic reserved3; //[7:7]
+    logic [6:0]dfi_trddata_en; //[6:0]
+  } dfi_timing_param0_t;
+
+  typedef struct packed {
+    logic reserved0; //[31:31]
+    logic [6:0]dfi_tphy_wrcslat; //[30:24]
+    logic reserved1; //[23:23]
+    logic [6:0]dfi_tphy_wrcsgap; //[22:16]
+    logic reserved2; //[15:15]
+    logic [6:0]dfi_tphy_wrlat; //[14:8]
+    logic reserved3; //[7:7]
+    logic [6:0]dfi_tphy_wrdata; //[6:0]
+  } dfi_timing_param1_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_tctrl_delay; //[31:24]
+    logic [7:0]dfi_twrdata_delay; //[23:16]
+    logic [7:0]dfi_tdram_clk_disable; //[15:8]
+    logic [7:0]dfi_tdram_clk_enable; //[7:0]
+  } dfi_timing_param2_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_trdlvl_en; //[31:24]
+    logic [7:0]dfi_trdlvl_max; //[23:16]
+    logic [7:0]dfi_trdlvl_rr; //[15:8]
+    logic [7:0]dfi_twrlvl_en; //[7:0]
+  } dfi_timing_param3_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_twrlvl_max; //[31:24]
+    logic [7:0]dfi_twrlvl_ww; //[23:16]
+    logic [15:0]reserved0; //[15:0]
+  } dfi_timing_param4_t;
+
+  typedef struct packed {
+    logic [15:0]reserved0; //[31:16]
+    logic [7:0]dfi_tlp_resp; //[15:8]
+    logic [3:0]reserved1; //[7:4]
+    logic [3:0]dfi_tlp_wakeup; //[3:0]
+  } dfi_timing_param5_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_tphylvl_resp; //[31:24]
+    logic [7:0]reserved0; //[23:16]
+    logic [7:0]dfi_twrlvl_resp; //[15:8]
+    logic [7:0]dfi_trdlvl_resp; //[7:0]
+  } dfi_timing_param6_t;
+
+  typedef struct packed {
+    logic [5:0]reserved0; //[31:26]
+    logic [9:0]dfi_tctrlupd_max; //[25:16]
+    logic [5:0]reserved1; //[15:10]
+    logic [9:0]dfi_tctrlupd_min; //[9:0]
+  } dfi_timing_param7_t;
+
+  typedef struct packed {
+    logic [15:0]dfi_tlvl_max; //[31:16]
+    logic [5:0]reserved0; //[15:10]
+    logic [9:0]dfi_tctrlupd_interval; //[9:0]
+  } dfi_timing_param8_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_twdqlvl_en; //[31:24]
+    logic [7:0]dfi_twdqlvl_rw; //[23:16]
+    logic [7:0]dfi_twdqlvl_ww; //[15:8]
+    logic [7:0]reserved0; //[7:0]
+  } dfi_timing_param9_t;
+
+  typedef struct packed {
+    logic [15:0]idle_num_upd; //[31:16]
+    logic [7:0]reserved0; //[15:8]
+    logic [7:0]dfi_twdqlvl_resp; //[7:0]
+  } dfi_timing_param10_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_tcalvl_en; //[31:24]
+    logic [7:0]dfi_tcalvl_max; //[23:16]
+    logic [7:0]dfi_tcalvl_capture; //[15:8]
+    logic [7:0]dfi_tcalvl_cc; //[7:0]
+  } dfi_timing_param11_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_tvrefca; //[31:24]
+    logic [7:0]dfi_tcalvl_resp; //[23:16]
+    logic [7:0]dfi_tcalvl_cs_ca; //[15:8]
+    logic [4:0]reserved0; //[7:3]
+    logic [2:0]dfi_tcalvl_ca_sel; //[2:0]
+  } dfi_timing_param12_t;
+
+  typedef struct packed {
+    logic [7:0]dfi_tcalvl_strobe; //[31:24]
+    logic reserved0; //[23:23]
+    logic [6:0]dfi_tcalvl_data; //[22:16]
+    logic [15:0]reserved1; //[15:0]
+  } dfi_timing_param13_t;
+
+  typedef struct packed {
+    logic [30:0]reserved0; //[31:1]
+    logic dbg_en; //[0:0]
+  } dbg_ctrl_t;
+
+  typedef struct packed {
+    logic [6:0]reserved0; //[31:25]
+    logic mon0_type; //[24:24]
+    logic [2:0]reserved1; //[23:21]
+    logic mon0_op; //[20:20]
+    logic [3:0]mon0_operand_sel; //[19:16]
+    logic [3:0]reserved2; //[15:12]
+    logic [3:0]mon0_module_sel; //[11:8]
+    logic [7:0]mon0_signal_sel; //[7:0]
+  } monitor0_ctrl_t;
+
+  typedef struct packed {
+    logic [6:0]reserved0; //[31:25]
+    logic mon1_type; //[24:24]
+    logic [2:0]reserved1; //[23:21]
+    logic mon1_op; //[20:20]
+    logic [3:0]mon1_operand_sel; //[19:16]
+    logic [3:0]reserved2; //[15:12]
+    logic [3:0]mon1_module_sel; //[11:8]
+    logic [7:0]mon1_signal_sel; //[7:0]
+  } monitor1_ctrl_t;
+
+  typedef struct packed {
+    logic [6:0]reserved0; //[31:25]
+    logic mon2_type; //[24:24]
+    logic [2:0]reserved1; //[23:21]
+    logic mon2_op; //[20:20]
+    logic [3:0]mon2_operand_sel; //[19:16]
+    logic [3:0]reserved2; //[15:12]
+    logic [3:0]mon2_module_sel; //[11:8]
+    logic [7:0]mon2_signal_sel; //[7:0]
+  } monitor2_ctrl_t;
+
+  typedef struct packed {
+    logic [6:0]reserved0; //[31:25]
+    logic mon3_type; //[24:24]
+    logic [2:0]reserved1; //[23:21]
+    logic mon3_op; //[20:20]
+    logic [3:0]mon3_operand_sel; //[19:16]
+    logic [3:0]reserved2; //[15:12]
+    logic [3:0]mon3_module_sel; //[11:8]
+    logic [7:0]mon3_signal_sel; //[7:0]
+  } monitor3_ctrl_t;
+
+  typedef struct packed {
+    logic [27:0]reserved0; //[31:4]
+    logic monitor3; //[3:3]
+    logic monitor2; //[2:2]
+    logic monitor1; //[1:1]
+    logic monitor0; //[0:0]
+  } mon_signal_t;
+
+  typedef struct packed {
+    logic wdata_info_clr; //[31:31]
+    logic wdata_ptr_full; //[30:30]
+    logic reserved0; //[29:29]
+    logic wlast_err; //[28:28]
+    logic [7:0]wlast_err_mid; //[27:20]
+    logic [19:0]wlast_err_aid; //[19:0]
+  } wrdata_info_t;
+
+  typedef struct packed {
+    logic rdata_info_clr; //[31:31]
+    logic [8:0]reserved0; //[30:22]
+    logic rdq_ptr_full; //[21:21]
+    logic rdq_overrun; //[20:20]
+    logic [19:0]reserved1; //[19:0]
+  } rddata_info_t;
+
+  typedef struct packed {
+    logic [7:0]num_valid_req; //[31:24]
+    logic [7:0]num_rd_req; //[23:16]
+    logic [7:0]num_wr_req; //[15:8]
+    logic [7:0]num_wr_ready_req; //[7:0]
+  } reqq_info0_t;
+
+  typedef struct packed {
+    logic reqq_full; //[31:31]
+    logic reqq_empty; //[30:30]
+    logic [29:0]reserved0; //[29:0]
+  } reqq_info1_t;
+
+  typedef struct packed {
+    logic timing_param_sel; //[31:31]
+    logic [10:0]reserved0; //[30:20]
+    logic [3:0]dfs_cur_state; //[19:16]
+    logic reserved1; //[15:15]
+    logic [2:0]rcg_cur_state; //[14:12]
+    logic [3:0]pwr_cur_state; //[11:8]
+    logic [3:0]reserved2; //[7:4]
+    logic failsafe_run; //[3:3]
+    logic dfs_run; //[2:2]
+    logic rcg_run; //[1:1]
+    logic pwr_run; //[0:0]
+  } pwr_info_t;
+
+  typedef struct packed {
+    logic [24:0]reserved0; //[31:7]
+    logic phy_read_idle; //[6:6]
+    logic phy_write_idle; //[5:5]
+    logic dfi_init_start_dbg; //[4:4]
+    logic dfi_phyupd_req; //[3:3]
+    logic dfi_phyupd_ack; //[2:2]
+    logic dfi_ctrlupd_req; //[1:1]
+    logic dfi_ctrlupd_ack; //[0:0]
+  } phy_info_t;
+
+  typedef struct packed {
+    logic [31:0]reserved0; //[31:0]
+  } reserved0_t;
+
+  typedef struct packed {
+    logic [31:0]reserved1; //[31:0]
+  } reserved1_t;
+
+  typedef struct packed {
+    logic [31:0]hidden_key0; //[31:0]
+  } hidden_key0_t;
+
+  typedef struct packed {
+    logic [31:0]hidden_key1; //[31:0]
+  } hidden_key1_t;
+
+  typedef struct packed {
+    logic [31:0]hidden_key2; //[31:0]
+  } hidden_key2_t;
+
+  typedef struct packed {
+    logic [31:0]hidden_key3; //[31:0]
+  } hidden_key3_t;
+
+  typedef struct packed {
+    logic [23:0]reserved0; //[31:8]
+    logic [7:0]optimized_t_rcd; //[7:0]
+  } hidden_info0_t;
+
+  typedef struct packed {
+    logic [11:0]reserved0; //[31:20]
+    logic [3:0]event_sel5; //[19:16]
+    logic [3:0]event_sel4; //[15:12]
+    logic [3:0]event_sel3; //[11:8]
+    logic [3:0]event_sel2; //[7:4]
+    logic [3:0]event_sel1; //[3:0]
+  } ext_evemon_sel_t;
+
+  typedef struct packed {
+    logic [15:0]id_mask; //[31:16]
+    logic [15:0]id_value; //[15:0]
+  } ext_evemon_id_t;
+
+  typedef struct packed {
+    logic enable_event_mon_and_cnt; //[31:31]
+    logic enable_trigger; //[30:30]
+    logic enable_interrupt; //[29:29]
+    logic event_src_sel; //[28:28]
+    logic [6:0]reserved0; //[27:21]
+    logic cnt1_event_sel; //[20:20]
+    logic [1:0]reserved1; //[19:18]
+    logic [1:0]cnt2_event_sel; //[17:16]
+    logic [1:0]reserved2; //[15:14]
+    logic [1:0]sel1; //[13:12]
+    logic [1:0]sel0_5; //[11:10]
+    logic [1:0]sel0_4; //[9:8]
+    logic [1:0]sel0_3; //[7:6]
+    logic [1:0]sel0_2; //[5:4]
+    logic [1:0]sel0_1; //[3:2]
+    logic [1:0]sel0_0; //[1:0]
+  } ext_evemon_ctrl_t;
+
+  typedef struct packed {
+    logic [31:0]trigger_val1; //[31:0]
+  } ext_evemon_trig_val1_t;
+
+  typedef struct packed {
+    logic [31:0]trigger_val2; //[31:0]
+  } ext_evemon_trig_val2_t;
+
+  typedef struct packed {
+    logic [30:0]reserved0; //[31:1]
+    logic start_evemon; //[0:0]
+  } ext_evemon_start_t;
+
+  typedef struct packed {
+    logic o_start; //[31:31]
+    logic o_stop; //[30:30]
+    logic o_interrupt; //[29:29]
+    logic o_trigger; //[28:28]
+    logic [21:0]reserved0; //[27:6]
+    logic [5:0]ovf_flag; //[5:0]
+  } ext_evemon_mon_t;
+
+  typedef struct packed {
+    logic [31:0]cnt0; //[31:0]
+  } ext_evemon_cnt0_t;
+
+  typedef struct packed {
+    logic [31:0]cnt1; //[31:0]
+  } ext_evemon_cnt1_t;
+
+  typedef struct packed {
+    logic [31:0]cnt2; //[31:0]
+  } ext_evemon_cnt2_t;
+
+  typedef struct packed {
+    logic [31:0]cnt3; //[31:0]
+  } ext_evemon_cnt3_t;
+
+  typedef struct packed {
+    logic [31:0]cnt4; //[31:0]
+  } ext_evemon_cnt4_t;
+
+  typedef struct packed {
+    logic [31:0]cnt5; //[31:0]
+  } ext_evemon_cnt5_t;
+
+  typedef struct packed {
+    logic [12:0]reserved0; //[31:19]
+    logic [18:0]event_payload; //[18:0]
+  } ext_evemon_payload_t;
+
+endpackage

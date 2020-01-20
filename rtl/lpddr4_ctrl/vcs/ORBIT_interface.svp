@@ -1,0 +1,869 @@
+//=============================================================================
+// Release information
+// Design version: sifive_sesame_rel3_190711
+// Document version: OMC-V1.4-UG-R2.11, OMC-V1.4-IG-R1.00-SESAME
+// Release generated at Thu Jul 11 15:30:19 2019
+//=============================================================================
+
+// ============================================================================
+// Description:    
+// =============================================================================
+
+`ifndef OIC_INTERFACE
+`define OIC_INTERFACE
+
+
+`include "oic_define.h"
+
+// ============================================================================
+// ============================================================================
+// ============================================================================
+// Description: interface define for design
+// =============================================================================
+// =============================================================================
+// =============================================================================
+interface orbit_if_HXI #(
+  parameter DECODE_WIDTH = 2,
+  parameter ROUTE_WIDTH  = 2,
+  parameter ID_WIDTH     = 4,
+  parameter ADDR_WIDTH   = 32,
+  parameter USER_WIDTH   = 1,
+  parameter DATA_WIDTH   = 32,
+  // auto calculated
+  parameter WSTRB_WIDTH  = DATA_WIDTH / 8,
+  parameter A_PAYLD_WIDTH = 1 + DECODE_WIDTH + 4 + 4 + ID_WIDTH + ADDR_WIDTH + 13 + 2 + 2 + USER_WIDTH + ROUTE_WIDTH,
+  parameter W_PAYLD_WIDTH = WSTRB_WIDTH + DATA_WIDTH + 1,
+  parameter R_PAYLD_WIDTH = ID_WIDTH + 2 + DATA_WIDTH + 1 + USER_WIDTH + ROUTE_WIDTH,
+  parameter B_PAYLD_WIDTH = ID_WIDTH + 2 + USER_WIDTH + ROUTE_WIDTH
+);
+  logic AV, AR; logic [A_PAYLD_WIDTH -1:0] AP;
+  logic WV, WR; logic [W_PAYLD_WIDTH -1:0] WP;
+  logic RV, RR; logic [R_PAYLD_WIDTH -1:0] RP;
+  logic BV, BR; logic [B_PAYLD_WIDTH -1:0] BP;
+
+  modport si (
+    input  AV, output AR, input  AP,
+    input  WV, output WR, input  WP,
+    output RV, input  RR, output RP,
+    output BV, input  BR, output BP
+  );
+
+  modport mi (
+    output AV, input  AR, output AP,
+    output WV, input  WR, output WP,
+    input  RV, output RR, input  RP,
+    input  BV, output BR, input  BP
+  );
+
+  modport status (
+    output AV, output AR, output AP,
+    output WV, output WR, output WP,
+    output RV, output RR, output RP,
+    output BV, output BR, output BP
+  );
+
+  modport monitor (
+    input AV, input AR, input AP,
+    input WV, input WR, input WP,
+    input RV, input RR, input RP,
+    input BV, input BR, input BP
+  );
+
+
+`ifdef OIC_DEBUG
+
+`protected
+d(2E3+AGY5/+U_@&_T)&;9+=Md1&:W@FT5a4=Z=;Z8:eDK3f2gcP5)T>.]@?#_QB
+:?P14SJW&G0Gg+B=C[GbJ.e?EA:YL[3\)M\5.Qg&1LWb0TVTgF,1[)1Bf]aYV)Ye
+J)f>)_7eC9>\0b-5L#=TB&)J/0B#&(@.3U/D>gH.,a^+bR(&;AD\HBDB5L70>,L-
+&^?9SAg72f+YOW6S+SXQg]8-E#.+VJY[-X:FY)S[I-G;&,P)K5QF)_2U8G1ga^6R
+FU7(-bV6@cbAPGbAJ]HJg0M,V_?&Uf6VU\B+?E_c.e_=<IJ.Y&fabRK3\GG3fO.5
+64ZG.;/HR6L7WH:f,SfJFgJW[2g&M^+X,__+KH<Z\5C&;&8,Y<eG?-N<^^LWXBZM
+5(7(c#;:H.F]I._FG/T2)DIEA,e=\:/F]FW#UZ@SP0-#0]T4U],O;:BgKO-8-?Hf
+YSeeYS^BU5/g?5@dMN^JN<gd]=LX=b8L7W.BZ/K=ICUKb&\,AP;?69I9</:9/45V
+KHc0:@[2GRQC8/dZgU?JG7K?H^/0N@GRD^(H@+eb+5O-31KHXJ#;?TT)=dJa9XKa
+EBML/fFT@>YNPGIEF8\@G3@UQABKB2BEda2X&LI09QPSRP)[8,9Tb^JR?#)b\4@\
+=[48GOR]d(;>3FS+FcQ)(5/Ne<A=&\;-6^6gKZ\P,[A=#eM8<@SZfBg?=dW^DW&J
+GP(X0e1dXNGbc?K:.CcXK5(VSJeBe4&0);3BNMdT=_>:2<)=)J(a4)PGF<EK=dgC
+Yb3WIVZ7^b7DV5Je.8H2gX(8Q.:)&NHW4/=>UGDZ_MP@#41AdS>0^A<<J4D^YU35
+CK_8-IK^#2fO,CN_I=Cf-/@L59cUOS,T08WI_=Q]#VUA6EaH[=6[^A[)-XAS+fI0
+Q4QN^;VIDM>3_MT):=JK/H\g&G6SK<Ze3O;=43<NdNJW-J5ZN&2ES9W6e)OI^SV[
+BST7AOJ0:Wf^eYMg(Rd>;5FH\1P.@/MTE>J\Y&8G_g5_0PB9S+.Z[?38\&XMZMN]
++ONA]T@V2J4]g4=,.[X]ZUNNd6H=O.@g-\?AD2g_H)9/P>N>YWBPZ^SHXQ4?BDb2
+BH90JW-/G;L[BND4g.:69T4/>d8/-64V;<XQ:bLEQ8EW\7T=1Y9\?<bJAJ3=2W8&
+GcYHS@U+/41ZF7X@QP]@?/@(/^F6+G,Z0J1=2+SW#c>GU.K?]G#?J>2:e-?4-?J_
+bDZb,U9RJ8F;)[_#FFW?\?@[\a;dWEB9A/PAa98160b[:A5RE3(89:PQVK4SUWG0
+M[ZLNT;.,@F0^GU6F>C(Y5:cXcRBW_6PO1=58SQ(O?T?1\^,WLR^)>;O@Z_P_cBY
+S>-]O94BBCMRI?)UBV;2Y_(79BU\MXDdAGJ#HJJ\ee]d7gSO(4?H_Z&H+YQQQXJ/
+7=I@&ZZ2eUg#KfOT9+b<3.V)S0QWXUI_C^]Wd<WOP]d2QF<ZGMO-gMdE[O[W0-O?
+@]TZ_^Hc37O[cX_,6O+MK3_FH-^^GdN+.4I#M4d6MaK7[A>6Y35#TU?TA_)3T(<@
+:.GgVS2Z<]^=/;R[2,He+6:FXS]MSG8H>SVOWWIaR?-70VXZW[+A:D)0:XNJ.&GF
+@,?_\G,[6F=88Z]H)SM7[=^I23,E]4#6+Ab+dFJ=5CYe<Y.J5&g_M79??J2;#PQP
+BJGBaU.bc:^V8BVHQ<\NT^&BAX9G1@-O>SIUHOB<4(fV6f)dd@ISSWMBP[SU>.aS
+5/]#;F8E?1>M)R5aab?C?P:[^DRZDbG^W&@;_[N<_P;Q2BU-1:+);4P?]YLU,_6G
+X7d(?D<Z3(;b:A[NeZENQ9N-YAF_.e3HEK:a(F6b+E@LCBbFff:c8<YC=9M1],?L
+gaHQ37@KW>]ga?+-2&P6&)@&>K(<_J.Efd&.&N_7-/O)daKPARH/f.<8e<LMRY<_
+H;U-d>?KVCTXE&)<Ja4?#HJM\W_GW^+1ZKMK0QOI7;+R9.6=WHCF>5MSR>^f9;27
+>aF\DT\9#K#^O\UP9^1)ITP@C+.2LHJ]YCKZ8I:f^P(3YHd=eWfYK5K<KIa^.XF[
+H0]IW.&QY3#>Rd;,VFH8aZB>5&<3;XR^POMgLg&+7DcLUSUBTXcD?bR^O&Xa5e1L
+dW@_XSfc5I8dFCT@6&aPcV>6L#9P^SN1e8ab[Ze+UF_?A^,6D6Da\I<)>GYD@KNU
+_KCQDEQQc\C##3R=b_^]P_T-?BFCGY_=78^<WS;R4[;aZ\W^6-7L)P+8T:+fFY-9
+Ba->>C<B.bZcJYR-O[=_@E;R#6_M&_8ebGXA8@PT3g,g.&^(Z.D@#QaXO>7MYKFI
+8.-)ALTA/dL9:LC_YXYd0HW)63A#^TF83EXGO7H<KFP#U;4(JAIQZWWXJXWA4RVM
+E0^?65+W^C:#AZOR.Bc/_FF?0B>K:T(#ccIcTJS_<)Y<TR6)HHVRBJbbf:P&=)b@
+IgV8FE@D@,53?3-DD2b8eP=FOLg)caO6W(8\B_0CJe+Z20WQ5(b1)a6M;N:.c.IJ
+2]_FC>LY7?.A_RSbdQ/WUV++c2b/W2D(Wgc]?:C(gP2d/QP]3>W@bVE2^=R63dS9
+;45fV=E[&g6g34:TI&Y5CLNWE/W8&LNM;_)65[CBNWAX]RO;b60Gb_a4WSPI6&X9
+(9^#a,IAHg9=_f==XFX.).3c(^7OM(HbY2WI-/(Md.6gBE\NB?1WJ)5N#WBP2:V3
+/-baZEV6NSXCZ#:<FO^)?\RRI)(Pc,3P4)TF/IF]9)#9\ceMB?YYe2eW@8b3<T1R
+WJZ,-52Hb]8Gd@_P2b=/PUMK-8#Q7GBb5ad6JfH);7_)>^\B@6EcF;bCAZ<+NPbY
+d4A8(,]U,.e@C=;M(9d.V8:FPbK_BLC\5c\NRP>=RL/)O-=]A-7IA^>IHZ>8RTg/
+Q8)[9Se^IIL650[Nf-Jd1+f)aALH08#3N<=4C(OG-;e\SdLIJB6\6JD=F0:ZPc#0
+W8;Dc+J15@P[-4AH.VQ>/B:R/YA^I]M)4+e][&1:CI[X=c)A^@Q5aRbH_9=<:&;7
+00<Y=LJG.:PRB.AdN4T+@6J:]?,TOBC9R.29I4GX\==):[3L(R\dU-6X:&V^c,VU
+Jb@K^3bU)TC07M:XAbS(YH6Q)7T/_J^OHO9MJ,;PK-#82;b)_4NKHCORT\UPWRP8
+4V@a3/=@-\9e\?A:dTU)WDCIeX2/SV;C9.dIB@4AR#=4VdR&)\5DF)]//)bb#aeV
+IHSa3N;S,eL;/EI_.2ET]TVXcRPEI5-UC?):BD0M\FTG&B,#VN3QOF6F:R#JA1g?
+b6G2-GD,(c/d#/dYgU<G[acM2XFeK8IWLd3HPI@RU[[6V9T+M6=EEdR1DE[OdgNB
+O5CBN6LXFfY_9R(L7Z_b[SSX2E)L]:H.d-[P<a>TI89ffTGL19A6Dc1MfHR?;)\@
+Z?(LX^(=fLJ4XM>,E<LQbUW0.E^1/;F<L<+Ab]UeF[NDOADI2@C>F9)_^K,Pd\cd
+=OM-(8dAaY^E3)WXM4+?\0[W<#X.?J_[Ve6ST:I^V)=L=TV_\BWK[2(C@X@N(2Xb
+@&)0=<+4O74,-=Q8<ae@QE.P9T^J@YdbV+1X9(8ZV]7f[3_WQ?.>eE3YHeIaNAJI
+efZ=:TEN-=9.(Ug+=c=Bab2TFffZLf.[:+RYH-6[5gBSaU.Ne)]XC5K(B):#>g&;
+<^G4Ee@0USIb5;-bc#Aa[5^PcI-8_Hg2^M+@Z:C^F0/-XV+M<\0/@6W</N9HOQf0
+\CYePIbf_DALX#6_.4DfANO3T42gT?XN^H/gFC?^dAB=0Oa6B/TYc(Hf.+S4-GZJ
+VA.CA0D8OJR:I/K<QQ<L8O^FF;\EO#B.^5S2\+/]IT)d.0&.M>U&;H<XSR<[9OSJ
+JIKQ+7[-_4CHXB3B11fNX2K9;M?39,^W:A/MPY#e-:0MH-])CKKKP\0J\^]0>[)g
+TPK62AQ#.5@[R?HeZ-N2EDa>+\>JBD8NcIDfIJ:M-M<TZ^VB0?+d,0c)/eA+.3R,
+AVE7&?OR+GG/,V4.04P(<#_9ZT#-2Q2@2OF)>bF@I<[V1f>EKPe_F@.XaA>J=180
+HdVZ/,PW8_Ag/6889HD2Z>#_AKN=D)PXf)FFL8Q<DVOM94_=b1Xe.Td)4a=a)09X
+\f:NbK)P+0B)gT.5[?O[\b3@ZcCXI,<F0)8fGS#XCH#,BGF/;EZU<-U9-.FP#AP4
+4&fb&IPKS.RMR6\GANNH?YZ6H;a(dQCLeZB6ECe60^efI,cG:;V4Ec5CdNV,)U5^
+gR,/\RDYaMJ_;SQdME9YOOBe/7LVP:UP:U=ZP0;LT)M2V_fF7[Pc_dBe5/8+ZS0F
+,2^VdUg-]7T9CZ9>)K9ZWbbGC])gRUK9TfES41?59R&cH\VKc9d;A@:Z209[,YOI
+.LHI&M4[3V^eUCQ@d=7SgW8<<R?2H/ZZ,R5,(5GKX=LB8Ld)@=7dZ+\S+.c/)TgR
+34N.+V6&F)/3(I\TH;\GAE3O;C[#K-EWDS\AVHKcK-#+G^6J+7<I>f82IMB5&/AM
+28Ig77FY:EBMAeZ+]LY>Rf_KA]V)1MZ>DFPCA>RBGU]G1.d[MY]_gU3(HEH0<[+Z
+=,=FG[,:DM_1F^bBJW4DgL6ZY(R(1/2E>#VUUQK+;II(20>UMHSFbSY,:RL6P85O
+KaC?b/?eN#ZAJb2/J@cGb-?M.>:?V4Y]beOD<Dd=4Q-(8GZf]Z1;Lab&=HXX9HPO
++=@aW>S3]8R9O5<18.]cN9J]V.0BA2>UFBZ8(Cc^_6Y[RPSO253R.VKX@K0^5>+E
+GS/@a2Sgd:Gg8d;cT?Y/D2L>@7>KH,+2W;?Q/c4HX8JQVQOM)=K8#F1fg=O0-dP2
+RgIfE\]c98_=);6c]b-1)@M0P@AAA.OTVL?D#]L=Q/dVB\aGHM]421bW,]PHe]HP
+8\MT4dUXD5<KV<<)c&dV/g.Zb7bWGQ]5HK6S#;bS9+_P#W](d-PaK0/_SV]#c@G&
+6(BXXA^1G>1bBR_eaa#J86A:A.#VTL?U<d7A>]F]RC^#fHP@K(?QN8\I7LYBD91Q
+EB8\-AG;bCEb+UW1>5>OV\:9Y&,T7d\F[2#JX]A2)JJDaeGNGS.=R@d_7L5_SP/3
+d:QIPI?Wa/cCe2IXW)^5K1U8KR/C4=H,c\GcQU+:9MHE92WVZ@OS0Oa3-8MS3)>P
+dEJ>5WK<5GO\5]9QX[/X9DCSbSbM9,ad&+Q]+D25PV]WdYW:3=P^f)4:#,Kc_Hb&
+.6eOS&\5S5bDUT,,X,#MN5Pe7AMK9^]fV>_e@eW(GL,K/HKaJf\dPXM<&_0@+A3X
+B0b,(S@BXW;=e.YX8O^@[:X<8A693X/F=II;_;D&.UC6Pe48-AdIEbNf3GKLg:da
+52JHaEC23O7g_H<dU:PWY?0XO&C8T:6XI7>af5N@>f?TaOESE\5b?2fU,B.2?W^;
+?W999)(93/cSUGM[@bKbQ?^0?3W^OQ/fHZOZR+.X7ecG=eCW6GFdQ-]Rc2J:>VH;
+H#RF=+1_8#LgFJfZT&\27b/^C6H\W,9fe2A(L0FZ&fF_3dDYY53d@+]\1QI\B@;/
+g=&bfCge5J/PKe[IC[\:0B.U##RdQ?CTbV1W3-K^.569CT/VBOR]N3D<9(-N9:J^
++2TKdJ7E+L,<]@L+aSFa9WN77:@6^(^/8FYOPP=>57bDB8CEDDX7P=c-BcPg5CSC
+LZ?,/&DJ8LSf&f>\T3(_+[cZLfU-DI:D=CPNVAa>LDGEP01CN7N3fT<C>(eN1ePg
+TPN-Z1T7W0RLG9>:_C]4+b8)-J:Wc/3G60]Y44BW:7FGYfeLNW2(:.ZdCa.:7ef;
+De1RJE4RGJ0[\^=LgZc=f+=V2DFTQU:,JW_IH#UUCE):aG^?QPP=AEE\@H2G(W<T
+,4[N@I\gNRbN1S9&-4WYfd1?a/f-E@Nc?5\@3^UV0KWB3Y+HKMP#/]KHR4,f7=N@
+RQ+&<MEe-c0,WQX;5ONYBBX#S2N-NUY](CRg#61L/-8ZfOXg?9;MT&UZ(9QRUB5@
+44?V)b1J]+=^GR:DJTJD6S4>I?^fgRcG?dRJ>T6^2CG/:=faPRGV1EWGTC-#W;PQ
+&]fAOcccKSON?4SHR/CAP4gf?MRZIT^Eb:9TDF6=<IEV&6g.eV@@V\_[Y[NA?a?S
+X_TFM1O6\<;;]d)9_S^DXCX]-&)2?UE03>LG(168F3#M)(Pd=HKX=(NQTZTA2&6M
+f=H]c2aC/g(5P)ED=WC(H_]Kf?U<A>gdIE)WTPP+&);XG&-S.NGLO0_<5,Q/B&3<
+gCLX+cSPc?>C4<<;aPP2XGI,\@/7Ef.P#;.,NR-JTT,6Wc7P_52E3_=V3FJfT0g,
+_839>TDGW5Y4d^2)_-fD(VCU)HeP2_5.8_fRGbHcdRY1G;:aCVE[GTT\],=3FFK8
+92RZga-9I7_cP[M3.SaQEc+UGO^W1^;fRZS2DK8[RES1FHXb6Z<BMLTM=85=SIcT
+3?+A(H<XN?(_OT9[MTV/Zd7:28H,AZF4^O4AX4MI;IXM34]1XG8OT&HDc+:#M59]
+L&=dfHYH<ENVPY,0H+[1:O05L73HC.bYL11G\e#O()b)^4?\560U(U[]YLJ9UKbc
+a8^S4]N+MOJHGTU=SgW3;.\];>Qa[E-CXQPP6:.eV)1_Y9:WHgPHe22]_G6MX#g=
+cB3^9K]S-4VH-$
+`endprotected
+
+  
+`endif
+
+endinterface
+
+
+// =============================================================================
+interface orbit_if_EHXI #(
+  parameter ID_WIDTH      = 4,     // this ID_WIDTH includes ROUTE_WIDTH.
+  parameter ADDR_WIDTH    = 32,
+  parameter USER_WIDTH    = 1,
+  parameter DATA_WIDTH    = 32,
+  parameter QINDEX_WIDTH  = 1,
+  parameter QTHIRST_WIDTH = 1 << QINDEX_WIDTH,
+  // derived parameters.
+  parameter WSTRB_WIDTH  = DATA_WIDTH / 8
+);
+
+  logic                                  awrite;
+  logic                                  avalid;
+  logic                                  aready;
+  logic  [3:0]                           aqos;
+  logic  [3:0]                           alen;
+  logic  [ID_WIDTH-1:0]                  aid;
+  logic  [ADDR_WIDTH-1:0]                aaddr;
+  logic  [2:0]                           asize;
+  logic  [1:0]                           aburst;
+  logic  [3:0]                           acache;
+  logic  [2:0]                           aprot;
+  logic                                  alock;
+  logic  [1:0]                           asnoop;
+  logic  [1:0]                           adomain;
+  logic  [USER_WIDTH-1:0]                auser;
+
+  logic                                  rvalid;
+  logic                                  rready;
+  logic  [ID_WIDTH-1:0]                  rid;
+  logic  [1:0]                           rresp;
+  logic  [DATA_WIDTH-1:0]                rdata;
+  logic                                  rlast;
+  logic  [USER_WIDTH-1:0]                ruser;
+
+  logic                                  wvalid;
+  logic                                  wready;
+  logic  [WSTRB_WIDTH-1:0]               wstrb;
+  logic  [DATA_WIDTH-1:0]                wdata;
+  logic                                  wlast;
+
+  logic                                  bvalid;
+  logic                                  bready;
+  logic  [ID_WIDTH-1:0]                  bid;
+  logic  [1:0]                           bresp;
+  logic  [USER_WIDTH-1:0]                buser;
+
+  logic  [QTHIRST_WIDTH-1:0]             qthirst;
+  logic  [QINDEX_WIDTH-1:0]              qindex;
+  logic                                  qcongest;
+
+  modport si (
+    input     awrite,
+    input     avalid,
+    output    aready,
+    input     aqos,
+    input     alen,
+    input     aid,
+    input     aaddr,
+    input     asize,
+    input     aburst,
+    input     acache,
+    input     aprot,
+    input     alock,
+    input     asnoop,
+    input     adomain,
+    input     auser,
+
+    output    rvalid,
+    input     rready,
+    output    rid,
+    output    rresp,
+    output    rdata,
+    output    rlast,
+    output    ruser,
+
+    input     wvalid,
+    output    wready,
+    input     wstrb,
+    input     wdata,
+    input     wlast,
+
+    output    bvalid,
+    input     bready,
+    output    bid,
+    output    bresp,
+    output    buser,
+
+    input     qthirst,
+    input     qindex,
+    output    qcongest
+  );
+
+  modport mi (
+    output    awrite,
+    output    avalid,
+    input     aready,
+    output    aqos,
+    output    alen,
+    output    aid,
+    output    aaddr,
+    output    asize,
+    output    aburst,
+    output    acache,
+    output    aprot,
+    output    alock,
+    output    asnoop,
+    output    adomain,
+    output    auser,
+
+    input     rvalid,
+    output    rready,
+    input     rid,
+    input     rresp,
+    input     rdata,
+    input     rlast,
+    input     ruser,
+
+    output    wvalid,
+    input     wready,
+    output    wstrb,
+    output    wdata,
+    output    wlast,
+
+    input     bvalid,
+    output    bready,
+    input     bid,
+    input     bresp,
+    input     buser,
+
+    output    qthirst,
+    output    qindex,
+    input     qcongest
+  );
+endinterface
+
+
+// =============================================================================
+interface orbit_if_APB #(
+  parameter ADDR_WIDTH   = 32,
+  parameter DATA_WIDTH   = 32,
+  // auto calculated
+  parameter STRB_WIDTH   = DATA_WIDTH / 8
+);
+  // APB Interface
+  logic                       psel;
+  logic                       penable;
+  logic   [ADDR_WIDTH-1:0]    paddr;
+  logic   [2:0]               pprot;       // [1]: "0" is secure access
+  logic   [STRB_WIDTH-1:0]    pstrb;
+
+  logic                       pwrite;
+  logic   [DATA_WIDTH-1:0]    pwdata;
+
+  logic                       pready;
+  logic                       pslverr;
+  logic   [DATA_WIDTH-1:0]    prdata;
+
+  modport si (
+    input psel, penable, paddr, pprot, pstrb, pwrite, pwdata,
+    output pready, pslverr, prdata
+  );
+
+  modport mi (
+    output psel, penable, paddr, pprot, pstrb, pwrite, pwdata,
+    input pready, pslverr, prdata
+  );
+endinterface
+
+// =============================================================================
+interface orbit_if_AHB #(
+  parameter ADDR_WIDTH   = 32,
+  parameter DATA_WIDTH   = 32,
+  parameter USER_WIDTH   = 1
+);
+  // AHB slave interface
+  logic                         hbusreq;
+  logic                         hgrant ;
+  logic [ADDR_WIDTH -1:0]       haddr  ;
+  logic [1:0]                   htrans ;
+  logic                         hwrite ;
+  logic [2:0]                   hsize  ;
+  logic [2:0]                   hburst ;
+  logic [3:0]                   hprot  ;
+  logic [USER_WIDTH -1:0]       hauser ;
+
+  logic [DATA_WIDTH -1:0]       hwdata ;
+  logic [USER_WIDTH -1:0]       hwuser ;
+  logic [DATA_WIDTH -1:0]       hrdata ;
+  logic [USER_WIDTH -1:0]       hruser ;
+  logic                         hready ;
+  logic [1:0]                   hresp  ;
+
+  modport si (
+    input hbusreq,
+    output  hgrant ,
+    input haddr ,
+    input htrans,
+    input hwrite,
+    input hsize ,
+    input hburst,
+    input hprot ,
+    input hauser,
+
+    input hwdata,
+    input hwuser,
+    output  hrdata,
+    output  hruser,
+    output  hready,
+    output  hresp 
+  );
+
+  modport mi (
+    output hbusreq,
+    input  hgrant ,
+    output haddr ,
+    output htrans,
+    output hwrite,
+    output hsize ,
+    output hburst,
+    output hprot ,
+    output hauser,
+
+    output hwdata,
+    output hwuser,
+    input  hrdata,
+    input  hruser,
+    input  hready,
+    input  hresp 
+  );
+endinterface
+
+
+// =============================================================================
+interface orbit_if_AHB_lite #(
+  parameter ADDR_WIDTH   = 32,
+  parameter DATA_WIDTH   = 32,
+  parameter USER_WIDTH   = 1
+);
+
+//-------------------------------------------------------------------------------------
+//                                           |  HSEL  | HREADY input |  HREADY output |
+//-------------------------------------------|----------------------------------------|
+// SLAVE if  | AHB-lite slave if             |   O    |       O      |      O         |
+// SLAVE if  |-------------------------------|----------------------------------------|
+// SLAVE if  | AHB-lite mirrored master if   |   X    |       X      |      O         |
+//-------------------------------------------|----------------------------------------|
+// MASTER if | AHB-lite mirrored slave if    |   O    |       O      |      O         |
+// MASTER if |-------------------------------|----------------------------------------|
+// MASTER if | AHB-lite master if            |   X    |       O      |      X         | 
+//-------------------------------------------------------------------------------------
+
+  // AHB lite interface
+  logic [ADDR_WIDTH -1:0]       haddr;
+  logic [1:0]                   htrans;
+  logic                         hwrite;
+  logic [2:0]                   hsize;
+  logic [2:0]                   hburst;
+  logic                         hnonsec;
+  logic [3:0]                   hprot;
+  logic [USER_WIDTH -1:0]       hauser;
+
+  logic [DATA_WIDTH -1:0]       hwdata;
+  logic [USER_WIDTH -1:0]       hwuser;
+  logic [DATA_WIDTH -1:0]       hrdata;
+  logic [USER_WIDTH -1:0]       hruser;
+  logic                         hready;       // !!CAUTION!! direction is changed according to the if type.
+  logic                         hreadyout;   // !!CAUTION!! direction is changed according to the if type.
+  logic                         hresp;
+  logic                         hmastlock;
+  logic                         hsel;
+
+
+  modport si (
+    input   haddr,
+    input   htrans,
+    input   hwrite,
+    input   hsize,
+    input   hburst,
+    input   hnonsec,
+    input   hprot,
+    input   hauser,
+
+    input   hwdata,
+    input   hwuser,
+    output  hrdata,
+    output  hruser,
+    output  hready,
+    input   hreadyout,
+    output  hresp,
+    input   hsel
+  );
+
+  modport mi (
+    output  haddr,
+    output  htrans,
+    output  hwrite,
+    output  hsize,
+    output  hburst,
+    output  hnonsec,
+    output  hprot,
+    output  hauser,
+
+    output  hwdata,
+    output  hwuser,
+    input   hrdata,
+    input   hruser,
+    input   hready,
+    output  hreadyout,
+    input   hresp,
+    output  hsel
+  );
+endinterface
+
+
+// =============================================================================
+interface orbit_if_LDA_DL_VC #(
+  parameter M_DECODE_WIDTH = 2,
+  parameter M_ROUTE_WIDTH  = 2,
+  parameter M_ID_WIDTH     = 4,
+  parameter M_ADDR_WIDTH   = 32,
+  parameter M_USER_WIDTH   = 1,
+  parameter M_DATA_WIDTH   = 32,
+
+  parameter R_DECODE_WIDTH = 2,
+  parameter R_ROUTE_WIDTH  = 2,
+  parameter R_ID_WIDTH     = 4,
+  parameter R_ADDR_WIDTH   = 32,
+  parameter R_USER_WIDTH   = 1,
+  parameter R_DATA_WIDTH   = 32,
+  // auto calculated
+  parameter M_WSTRB_WIDTH  = M_DATA_WIDTH / 8,
+  parameter M_A_PAYLD_WIDTH = 1 + M_DECODE_WIDTH + 4 + 4 + M_ID_WIDTH + M_ADDR_WIDTH + 13 + 2 + 2 + M_USER_WIDTH + M_ROUTE_WIDTH,
+  parameter M_W_PAYLD_WIDTH = M_WSTRB_WIDTH + M_DATA_WIDTH + 1,
+  parameter M_R_PAYLD_WIDTH = M_ID_WIDTH + 2 + M_DATA_WIDTH + 1 + M_USER_WIDTH + M_ROUTE_WIDTH,
+  parameter M_B_PAYLD_WIDTH = M_ID_WIDTH + 2 + M_USER_WIDTH + M_ROUTE_WIDTH,
+
+  parameter R_WSTRB_WIDTH  = R_DATA_WIDTH / 8,
+  parameter R_A_PAYLD_WIDTH = 1 + R_DECODE_WIDTH + 4 + 4 + R_ID_WIDTH + R_ADDR_WIDTH + 13 + 2 + 2 + R_USER_WIDTH + R_ROUTE_WIDTH,
+  parameter R_W_PAYLD_WIDTH = R_WSTRB_WIDTH + R_DATA_WIDTH + 1,
+  parameter R_R_PAYLD_WIDTH = R_ID_WIDTH + 2 + R_DATA_WIDTH + 1 + R_USER_WIDTH + R_ROUTE_WIDTH,
+  parameter R_B_PAYLD_WIDTH = R_ID_WIDTH + 2 + R_USER_WIDTH + R_ROUTE_WIDTH,
+
+  parameter A_PAYLD_WIDTH = M_A_PAYLD_WIDTH >= R_R_PAYLD_WIDTH ? M_A_PAYLD_WIDTH : R_R_PAYLD_WIDTH,
+  parameter W_PAYLD_WIDTH = M_W_PAYLD_WIDTH,
+  parameter R_PAYLD_WIDTH = M_R_PAYLD_WIDTH,
+  parameter B_PAYLD_WIDTH = M_B_PAYLD_WIDTH >= R_W_PAYLD_WIDTH && M_B_PAYLD_WIDTH >= R_A_PAYLD_WIDTH ? M_B_PAYLD_WIDTH :
+                            R_W_PAYLD_WIDTH >= M_B_PAYLD_WIDTH && R_W_PAYLD_WIDTH >= R_A_PAYLD_WIDTH ? R_W_PAYLD_WIDTH : R_A_PAYLD_WIDTH
+);
+  logic tx_clk, tx_clk2, tx_reset_n;
+  logic rx_clk, rx_clk2, rx_reset_n;
+  logic A_rd_en, A_wr_en; logic [A_PAYLD_WIDTH +1 -1:0] A_wr_data;
+  logic W_rd_en, W_wr_en; logic [W_PAYLD_WIDTH +1 -1:0] W_wr_data;
+  logic R_rd_en, R_wr_en; logic [R_PAYLD_WIDTH +1 -1:0] R_wr_data;
+  logic B_rd_en, B_wr_en; logic [B_PAYLD_WIDTH +1 -1:0] B_wr_data;
+  logic tx_pcken, rx_pcken;
+  logic pd_req, pd_ack, tx_pwr_state, rx_pwr_state;
+  logic r_pd_req, r_pd_ack, r_tx_pwr_state, r_rx_pwr_state;
+  logic rB_rd_en, rB_wr_en, rR_rd_en, rR_wr_en;
+  logic rA_rd_en, rA_wr_en, rW_rd_en, rW_wr_en;
+
+  modport si (
+    input  tx_clk, tx_clk2, tx_reset_n, 
+           A_wr_en, A_wr_data, W_wr_en, W_wr_data, R_rd_en, B_rd_en, 
+           tx_pcken, pd_req, tx_pwr_state, r_pd_ack, r_rx_pwr_state, 
+           rB_wr_en, rR_wr_en, rA_rd_en, rW_rd_en,
+    output rx_clk, rx_clk2, rx_reset_n,
+           A_rd_en, W_rd_en, R_wr_en, R_wr_data, B_wr_en, B_wr_data,
+           rx_pcken, pd_ack, rx_pwr_state, r_pd_req, r_tx_pwr_state,
+           rB_rd_en, rR_rd_en, rA_wr_en, rW_wr_en
+  );
+
+  modport mi (
+    output tx_clk, tx_clk2, tx_reset_n, 
+           A_wr_en, A_wr_data, W_wr_en, W_wr_data, R_rd_en, B_rd_en, 
+           tx_pcken, pd_req, tx_pwr_state, r_pd_ack, r_rx_pwr_state, 
+           rB_wr_en, rR_wr_en, rA_rd_en, rW_rd_en,
+    input  rx_clk, rx_clk2, rx_reset_n,
+           A_rd_en, W_rd_en, R_wr_en, R_wr_data, B_wr_en, B_wr_data,
+           rx_pcken, pd_ack, rx_pwr_state, r_pd_req, r_tx_pwr_state,
+           rB_rd_en, rR_rd_en, rA_wr_en, rW_wr_en
+  );
+
+endinterface
+
+// =============================================================================
+interface orbit_if_LDA #(
+  parameter DECODE_WIDTH = 1,
+  parameter ROUTE_WIDTH  = 0,
+  parameter ID_WIDTH     = 9,
+  parameter ADDR_WIDTH   = 40,
+  parameter USER_WIDTH   = 1,
+  parameter DATA_WIDTH   = 128,
+  // auto calculated
+  parameter WSTRB_WIDTH  = DATA_WIDTH / 8,
+  parameter A_PAYLD_WIDTH = 1 + DECODE_WIDTH + 4 + 4 + ID_WIDTH + ADDR_WIDTH + 13 + 2 + 2 + USER_WIDTH + ROUTE_WIDTH,
+  parameter W_PAYLD_WIDTH = WSTRB_WIDTH + DATA_WIDTH + 1,
+  parameter R_PAYLD_WIDTH = ID_WIDTH + 2 + DATA_WIDTH + 1 + USER_WIDTH + ROUTE_WIDTH,
+  parameter B_PAYLD_WIDTH = ID_WIDTH + 2 + USER_WIDTH + ROUTE_WIDTH
+);
+  logic tx_clk, tx_clk2, tx_reset_n;
+  logic rx_clk, rx_clk2, rx_reset_n;
+  logic A_rd_en, A_wr_en; logic [A_PAYLD_WIDTH +1 -1:0] A_wr_data;
+  logic W_rd_en, W_wr_en; logic [W_PAYLD_WIDTH +1 -1:0] W_wr_data;
+  logic R_rd_en, R_wr_en; logic [R_PAYLD_WIDTH +1 -1:0] R_wr_data;
+  logic B_rd_en, B_wr_en; logic [B_PAYLD_WIDTH +1 -1:0] B_wr_data;
+  logic pcken;
+  //logic WL_rd_en, WL_wr_en;
+  logic pd_req, pd_ack, tx_pwr_state, rx_pwr_state;
+
+  modport si (
+    input  tx_clk, tx_clk2, tx_reset_n, 
+           A_wr_en, A_wr_data, W_wr_en, W_wr_data, R_rd_en, B_rd_en, 
+           pcken, pd_req, tx_pwr_state,
+    output rx_clk, rx_clk2, rx_reset_n,
+           A_rd_en, W_rd_en, R_wr_en, R_wr_data, B_wr_en, B_wr_data,
+           pd_ack, rx_pwr_state
+  );
+
+  modport mi (
+    output tx_clk, tx_clk2, tx_reset_n, 
+           A_wr_en, A_wr_data, W_wr_en, W_wr_data, R_rd_en, B_rd_en, 
+           pcken, pd_req, tx_pwr_state,
+    input  rx_clk, rx_clk2, rx_reset_n,
+           A_rd_en, W_rd_en, R_wr_en, R_wr_data, B_wr_en, B_wr_data,
+           pd_ack, rx_pwr_state
+  );
+
+endinterface
+
+// =============================================================================
+interface orbit_if_LDA_TL #(
+  parameter DECODE_WIDTH = 2,
+  parameter ROUTE_WIDTH  = 2,
+  parameter ID_WIDTH     = 4,
+  parameter ADDR_WIDTH   = 32,
+  parameter USER_WIDTH   = 1,
+  parameter DATA_WIDTH   = 32,
+  // auto calculated
+  parameter WSTRB_WIDTH  = DATA_WIDTH / 8,
+  parameter A_PAYLD_WIDTH = 1 + DECODE_WIDTH + 4 + 4 + ID_WIDTH + ADDR_WIDTH + 13 + 2 + 2 + USER_WIDTH + ROUTE_WIDTH,
+  parameter W_PAYLD_WIDTH = WSTRB_WIDTH + DATA_WIDTH + 1,
+  parameter R_PAYLD_WIDTH = ID_WIDTH + 2 + DATA_WIDTH + 1 + USER_WIDTH + ROUTE_WIDTH,
+  parameter B_PAYLD_WIDTH = ID_WIDTH + 2 + USER_WIDTH + ROUTE_WIDTH,
+  parameter A_T_PAYLD_WIDTH = A_PAYLD_WIDTH / 2 == 0 ? A_PAYLD_WIDTH / 2 : ((A_PAYLD_WIDTH +1)/2),
+  parameter W_T_PAYLD_WIDTH = W_PAYLD_WIDTH / 2 == 0 ? W_PAYLD_WIDTH / 2 : ((W_PAYLD_WIDTH +1)/2),
+  parameter R_T_PAYLD_WIDTH = R_PAYLD_WIDTH / 2 == 0 ? R_PAYLD_WIDTH / 2 : ((R_PAYLD_WIDTH +1)/2),
+  parameter B_T_PAYLD_WIDTH = B_PAYLD_WIDTH / 2 == 0 ? B_PAYLD_WIDTH / 2 : ((B_PAYLD_WIDTH +1)/2)
+);
+  logic tx_clk, tx_clk2, tx_reset_n;
+  logic rx_clk, rx_clk2, rx_reset_n;
+  logic A_rd_en, A_wr_en; logic [A_T_PAYLD_WIDTH +1 -1:0] A_wr_data;
+  logic W_rd_en, W_wr_en; logic [W_T_PAYLD_WIDTH +1 -1:0] W_wr_data;
+  logic R_rd_en, R_wr_en; logic [R_T_PAYLD_WIDTH +1 -1:0] R_wr_data;
+  logic B_rd_en, B_wr_en; logic [B_T_PAYLD_WIDTH +1 -1:0] B_wr_data;
+  logic pcken;
+  //logic WL_rd_en, WL_wr_en;
+  logic pd_req, pd_ack, tx_pwr_state, rx_pwr_state;
+
+  modport si (
+    input  tx_clk, tx_clk2, tx_reset_n, 
+           A_wr_en, A_wr_data, W_wr_en, W_wr_data, R_rd_en, B_rd_en, 
+           pcken, pd_req, tx_pwr_state,
+    output rx_clk, rx_clk2, rx_reset_n,
+           A_rd_en, W_rd_en, R_wr_en, R_wr_data, B_wr_en, B_wr_data,
+           pd_ack, rx_pwr_state
+  );
+
+  modport mi (
+    output tx_clk, tx_clk2, tx_reset_n, 
+           A_wr_en, A_wr_data, W_wr_en, W_wr_data, R_rd_en, B_rd_en, 
+           pcken, pd_req, tx_pwr_state,
+    input  rx_clk, rx_clk2, rx_reset_n,
+           A_rd_en, W_rd_en, R_wr_en, R_wr_data, B_wr_en, B_wr_data,
+           pd_ack, rx_pwr_state
+  );
+
+endinterface
+
+// =============================================================================
+interface orbit_if_AXI #(
+  parameter ID_WIDTH     = 4,
+  parameter ADDR_WIDTH   = 32,
+  parameter USER_WIDTH   = 1,
+  parameter DATA_WIDTH   = 32,
+  // auto calculated
+  parameter WSTRB_WIDTH  = DATA_WIDTH / 8
+);
+
+  logic ARVALID, ARREADY;
+  logic [3:0]               ARQOS;
+  logic [7:0]               ARLEN;
+  logic [ID_WIDTH - 1:0]    ARID;
+  logic [ADDR_WIDTH - 1:0]  ARADDR;
+  logic [2:0]               ARSIZE;
+  logic [1:0]               ARBURST;
+  logic [3:0]               ARCACHE;
+  logic [2:0]               ARPROT;
+  logic [1:0]               ARLOCK;
+  logic [3:0]               ARSNOOP;
+  logic [1:0]               ARDOMAIN;
+  logic [1:0]               ARBAR;
+  logic [USER_WIDTH - 1:0]  ARUSER;
+
+  logic AWVALID, AWREADY;
+  logic [3:0]               AWQOS;
+  logic [7:0]               AWLEN;
+  logic [ID_WIDTH - 1:0]    AWID;
+  logic [ADDR_WIDTH - 1:0]  AWADDR;
+  logic [2:0]               AWSIZE;
+  logic [1:0]               AWBURST;
+  logic [3:0]               AWCACHE;
+  logic [2:0]               AWPROT;
+  logic [1:0]               AWLOCK;
+  logic [2:0]               AWSNOOP;
+  logic [1:0]               AWDOMAIN;
+  logic [1:0]               AWBAR;
+  logic [USER_WIDTH - 1:0]  AWUSER;
+
+  logic WVALID, WREADY;
+  logic [ID_WIDTH - 1:0]    WID;
+  logic [WSTRB_WIDTH - 1:0] WSTRB;
+  logic [DATA_WIDTH - 1:0]  WDATA;
+  logic                     WLAST;
+
+  logic RVALID, RREADY;
+  logic [ID_WIDTH - 1:0]    RID;
+  logic [1:0]               RRESP;
+  logic [DATA_WIDTH - 1:0]  RDATA;
+  logic                     RLAST;
+  logic [USER_WIDTH - 1:0]  RUSER;
+
+  logic BVALID, BREADY;
+  logic [ID_WIDTH - 1:0]    BID;
+  logic [1:0]               BRESP;
+  logic [USER_WIDTH - 1:0]  BUSER;
+
+  modport si (
+    input ARVALID, output ARREADY,
+    input ARQOS,
+    input ARLEN,
+    input ARID,
+    input ARADDR,
+    input ARSIZE,
+    input ARBURST,
+    input ARCACHE,
+    input ARPROT,
+    input ARLOCK,
+    input ARSNOOP,
+    input ARDOMAIN,
+    input ARBAR,
+    input ARUSER,
+
+    input AWVALID, output AWREADY,
+    input AWQOS,
+    input AWLEN,
+    input AWID,
+    input AWADDR,
+    input AWSIZE,
+    input AWBURST,
+    input AWCACHE,
+    input AWPROT,
+    input AWLOCK,
+    input AWSNOOP,
+    input AWDOMAIN,
+    input AWBAR,
+    input AWUSER,
+
+    input WVALID, output WREADY,
+    input WID,
+    input WSTRB,
+    input WDATA,
+    input WLAST,
+
+    output RVALID, input RREADY,
+    output RID,
+    output RRESP,
+    output RDATA,
+    output RLAST,
+    output RUSER,
+
+    output BVALID, input BREADY,
+    output BID,
+    output BRESP,
+    output BUSER
+  );
+
+  modport mi (
+    output ARVALID, input ARREADY,
+    output ARQOS,
+    output ARLEN,
+    output ARID,
+    output ARADDR,
+    output ARSIZE,
+    output ARBURST,
+    output ARCACHE,
+    output ARPROT,
+    output ARLOCK,
+    output ARSNOOP,
+    output ARDOMAIN,
+    output ARBAR,
+    output ARUSER,
+
+    output AWVALID, input AWREADY,
+    output AWQOS,
+    output AWLEN,
+    output AWID,
+    output AWADDR,
+    output AWSIZE,
+    output AWBURST,
+    output AWCACHE,
+    output AWPROT,
+    output AWLOCK,
+    output AWSNOOP,
+    output AWDOMAIN,
+    output AWBAR,
+    output AWUSER,
+
+    output WVALID, input WREADY,
+    output WID,
+    output WSTRB,
+    output WDATA,
+    output WLAST,
+
+    input  RVALID, output RREADY,
+    input  RID,
+    input  RRESP,
+    input  RDATA,
+    input  RLAST,
+    input  RUSER,
+
+    input  BVALID, output BREADY,
+    input  BID,
+    input  BRESP,
+    input  BUSER
+  );
+
+endinterface
+
+// =============================================================================
+interface orbit_if_axi_payload #(
+  parameter DECODE_WIDTH = 0 ,
+  parameter ROUTE_WIDTH  = 0 ,
+  parameter ID_WIDTH     = 4 ,
+  parameter ADDR_WIDTH   = 32,
+  parameter USER_WIDTH   = 1 ,
+  parameter DATA_WIDTH   = 32,
+  // auto calculated
+  parameter AR_PAYLD_WIDTH = 4 + 4 + ID_WIDTH + ADDR_WIDTH + 13 + 2+2 + USER_WIDTH + ROUTE_WIDTH,
+  parameter AW_PAYLD_WIDTH = 4 + 4 + ID_WIDTH + ADDR_WIDTH + 13 + 2+2 + USER_WIDTH + ROUTE_WIDTH,
+  parameter WSTRB_WIDTH = DATA_WIDTH/8,
+  parameter A_PAYLD_WIDTH = 1 + DECODE_WIDTH + 4 + 4 + ID_WIDTH + ADDR_WIDTH + 13 + 2 + 2 + USER_WIDTH + ROUTE_WIDTH,
+  parameter W_PAYLD_WIDTH = WSTRB_WIDTH + DATA_WIDTH + 1,
+  parameter R_PAYLD_WIDTH = ID_WIDTH + 2 + DATA_WIDTH + 1 + USER_WIDTH + ROUTE_WIDTH,
+  parameter B_PAYLD_WIDTH = ID_WIDTH + 2 + USER_WIDTH + ROUTE_WIDTH
+);
+
+  logic arv, arr; logic [AR_PAYLD_WIDTH -1:0] arp;
+  logic awv, awr; logic [AW_PAYLD_WIDTH -1:0] awp;
+  logic  wv,  wr; logic [ W_PAYLD_WIDTH -1:0]  wp;
+  logic  rv,  rr; logic [ R_PAYLD_WIDTH -1:0]  rp;
+  logic  bv,  br; logic [ B_PAYLD_WIDTH -1:0]  bp;
+
+  modport si (
+    input arv, arp, awv, awp, wv, wp, rr, br,
+    output arr, awr, wr, rv, rp, bv, bp
+  );
+
+  modport mi (
+    output arv, arp, awv, awp, wv, wp, rr, br,
+    input arr, awr, wr, rv, rp, bv, bp
+  );
+
+endinterface
+
+
+`include "oic_undef.h"
+`endif
+
+// vim: tabstop=2 expandtab softtabstop=2 shiftwidth=2 smarttab
+
