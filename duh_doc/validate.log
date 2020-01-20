@@ -1,0 +1,13 @@
+[32minfo[39m: c1_apb:PCLKEN is unmapped
+[32minfo[39m: c2_axi:ACLKEN is unmapped
+[32minfo[39m: c2_axi:AWCACHE is unmapped
+[32minfo[39m: c2_axi:AWREGION is unmapped
+[32minfo[39m: c2_axi:WID is unmapped
+[32minfo[39m: c2_axi:ARCACHE is unmapped
+[32minfo[39m: c2_axi:ARREGION is unmapped
+[32minfo[39m: c2_axi:AWUSER is unmapped
+[32minfo[39m: c2_axi:WUSER is unmapped
+[32minfo[39m: c2_axi:BUSER is unmapped
+[32minfo[39m: c2_axi:ARUSER is unmapped
+[32minfo[39m: c2_axi:RUSER is unmapped
+[33mwarn[39m: irq: has unknown busType: sifive.com:free:interrupts:0.1.0

@@ -1,0 +1,70 @@
+//=============================================================================
+// Release information
+// Design version: sifive_sesame_rel3_190711
+// Document version: OMC-V1.4-UG-R2.11, OMC-V1.4-IG-R1.00-SESAME
+// Release generated at Thu Jul 11 15:30:19 2019
+//=============================================================================
+
+//=============================================================================
+// Description :
+//=============================================================================
+
+module single_depth_fifo
+`protected
+D@ZAP.=)2?[VPHB3HgI_:JMdFC#G[aW,?JR-gLCBc^#fa+_eB)ag))V^d6U>4-6c
+63>ZPDE8U?7\S?d)653Y;J,G39&bS;=fS,b5D/]E+8Sg/]E^eGVZM@GJ7-PT3#&R
+,))0:?:]94(8S9g[:_)fN-/Z=D^49O>JLYcDAg0P2&c+5;=Sg^g9Sf7D\1M>gKgF
+5I]C3f_2W5L8CFI,ZJIFP(5;D]2S4Q/0TMg[##?AYJ#+g5SDLd:6C#E2IT\aU_FQ
+e87[^&#AEH]YF;JKZ:FJ]X/^9<56I207X[&_-b-9)?^8AA&52KUWA)>ZUcdWW1-[
+GQ9HJD<EL0eL+DW@?8I(A[>6g9C-B.G.-fVT0D=;>6?VF&5+O:G^4&PXZd?F\TaY
+<2]>AE3+,dVX_IDFg8JCZDG_?N;@S[_KP)aMS1.3_G/U#BH#)UdNRfTd&D:-GEOI
+7N8I3U05b;1Tc\SX9E^Z/2LR)86,F;?TX+;T/]W&K?<?>D@[474X4:fV68ZVD:TU
+0,KT@2SdLX&-ZHf=9TY0(.#WgZ80&&^DV,1DUeMJ4@Oa3cZg6?LKP>QJ@2T\,X48
+LI1#,J32F(_CDd\AIO79&CZ^S#:,aRG0)IORY2)3MS4KHGYT]/;2Z)^a1&XK.3QN
+N:cB)JG??TO;ae9Z053g[:L[L=\4/^/8H9UAFA\=6ge/DD[Be<&E_Z6^1cc;CaKE
+-NCf_MVX(<8E.#;-A;TO_bg+Z>04?RaS\E&TASDT.&,,dOOGcc1A,-EU+,H+#?\+
+bZ>U3:9F5J6?+IFPXb;IR[M:XC?G:H<@a+P2N?YNO[5O=0Qc)HeYJK89SHD5DdO\
+K#C49F<X-L0H:R;_Ff_?#=+Z^-@&bBO&V7TEaC@&84D#/XeSP#3D0)OTRVQ&0P3V
+.BOAF];MBP-2c=8.;VYH.SB?f>eZT6\YX[49\EU0e8D)HXH,T,I(HU?IYOcg(@4Y
+U9(8TW8&^cOF9cFKOBSKO;R;934)->efNf5E>X(g9,;==K7+W?8B0)H:::Z8DAFH
+.9f;_/DRZc/XFa\e3H@NR0dcG[/=\SPI=CZUDeeLR_])/OV)[D87O;d>#C^=9S^,
+E:-/a;,?1UT7Lc38D=O10;XaTf3>,X1?d3/g398G_]3QSReZ/AA2;Y)BL@,GHZeH
+;R1UPVgG[>X+L\+1&b>9Z]XUcB5-;e,Z4H>IX=7NcP,J,H,\QPaaGc_?=&T4\E>f
+2RUEaHC2a/cGS691R(E:TYSGX_TbGVSNe]c6T-c,[d4U/XO:DIVEYN6N7A<cO]<_
+Be^W<4LCH.PLaZ.4Rc57FQ[8.&FPX6&3\;<8D@QPD8fK(T@_0fS<Y]Z;dW/3Z,e=
+B=4cd5EWMO]XI[X6KEDF]I976(QQ>gL_#[Q50XM4O/JJ;^C)98-LWI1,f]J6#X\4
+(gT7::eFbDHgSUF+#GAc5a+79RWd&#>1NDf9RP5METab5=DBf-C5<AFcBaddB&,;
+bG_:A,?8H@e/C6YWQI]Y_fa^Z_V+K9D1,12+7@;QbGM([\9^L&\bZY0MDJA-<.7N
+AMb2FR<fMQ;POOIQ6+/6Z#YECg8(Pd-8=6,YOWQMDM.a259&-[CQEOMA_:>\L@))
+W7)04b_I4-MUKa(dV5,2TeUeQ5KY]=MEPf&\.IbU/e8F3.d?gP#D\?eKON4N3?GN
+9Ue,DO8TK#9BF=0KU1:5NV@Y\C\=c.TG95,RD6]L;EKV->@g5(]d:LYYda^T^Zab
+&HM[F[U->WBR-.&X,^fb-0=@Ad&,BW_]FD)G4L9WR&K#d8QTUQc4_92=,<]CK2_0
+Gc\]CRY]:aLgJ[0UJS-KS6=L,5GbWZgbVVS\8<XGU4,(^104ZB@IB(RJ5/_4)S8F
+b3V,I:B,[N-9=6KaI,Z=aGAV9cFO3C&HCf&fOF4N@_0(4)1a58/(0X0:4_f9YJD&
+FdNDDd)2.MHNVEb7K.SgV+DHN;M-NUb[G+J[Wd2&/4&@\eGM;d+LE24IK^c46+@8
+.9++W#Q1-P?IB-a9^]?P7[ZdK@AGL7=87@b,.4&1ZX<ZADO__2.Z#&6LK^Q1dKR>
+e\Qc,SZGFX4L6dTWD3<^TJ0A9:b-7T_470(;.?240\5gLde8&<041QCcdIIX-R5T
+A?X>)K6GAb?Vg@AQBgTXf^0.0,#S^b)bA83U2NZJ@;<C]F\D-/82F/KPK?L9cMOR
+AAB_N/09)AC0>P.&2<-#XX;&SB0g@L=^)A^S(1I9&D,OG-S<M;(@S8,Ug&]MNDSL
+&6MDMM&:8JN&2A_5\P>9(^J<g;XFeIgNXQdcTg)OZP^_+E62Xd-F73^&/@C3bS\_
+2eOZ<D/_]?PN^CV4GcOK<;SI\>P],ScAO.@NF.13L&H5Z+N/H@U[#;4DROIF;K1B
+6]/#A1dfXPU#Tb#P:5^@Ca[4((PYIaN2IQ4HJE7Od?K-U,U.[(G#a#Z.HEP>#N)f
+aVQCXT2S:.T<;X)/(HAWMZ;EYV&gb)(4WY.aSYT[CW&V@:RWLIBC=XLRS4Nd.c]J
+7@93VVTVf95dWY@,N3^(a1QY1<@5C#EFe6/I7WcZg\YKWJ58TSeacbZT6]b?NYbT
+L&ZMbFE.2(<dUK28C-U(AY?UE+J]=9GQ<I:^P<7-(?X4<1:5g1-)YBW9_V,BNKPQ
+c=]_:V9gGX?KV/L1dRG#^Z_[Bfg?VOc]-+D,(6?K.9FNZg4OL.7[2[XbJR[:-I)g
+:PPK,L7cAdSa.:(08QCGZ/+>?&CPC:3fN:U;THT0Jb.de\IT/GF5F2O[-/Ff16)+
+<M_@.Z<KS8MMBK,8CK,TZ]?Sc]-<2Z0f^EgUVfY@3Q+B.N(SD/JP/Q585D5_M173
+3[dT)63c#QTBR\,a<)CNIM^SfX+fTFdZ9&VE?,=5cDRO<A]JE4>#FFd_3LdZ:gM^
+T7GYI=QQN:c4PXRP2f8?-/+:QMOD>WY2R^(AEOU6\O3RAF8),e#1)O=9S4HAOIQK
+F_KKO9W[V-]7g#ab0IB6ZNP7bIEATKYK/7N5a4Ue.[_T?fEX9JbS_,5ZAgNLJeML
+,I(JeHLQ&C6KD@_\g5L4H?;_f@Id78S>76IEf?HVEO\edGKE_c\Ee?[R:?)\&fM,
+:>C6c)1NU]a6<LDKH2HUPQJ??J-XM<VY>ERV^/NQ=3b,FI6Ud/I-TX_eC7X7DZW\
+,\bf6)AV;1VH>g.A1Ie7gC&[K?]L0d)8;^@1WYTc_WgT_W@S8V#(T<.,@^:&9YdR
+f/E#Qb58TRd[4Sg0?aJE.=a4>1Sd.:d4W3EB4B;O;]=c=HFG]0?Z5TVLW(Z>1=XB
+7aY6b-5D^9b6/6?@-VaM[&OCC>]c,E3SLY6NJ.:d,Ba=57WGZHA,VeCUK.Y@dIF2
+X0-69\cVZK&[fc=&4)Lga)QY@R/6gIG8R?6JEg;EdG\=G$
+`endprotected
+endmodule
+
+// vim: tabstop=2 softtabstop=2 shiftwidth=2 expandtab autoindent smartindent
