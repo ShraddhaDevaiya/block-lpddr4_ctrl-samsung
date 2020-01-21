@@ -88,6 +88,12 @@ object NomcTop {
     val omc = NomcTopBase.attach(c)(bap)
 
     // User code here
+    implicit val p = bap.p
+    bap.pbus.coupleTo("device_named_omc") { bus =>
+      omc.regmap.controlXing(NoCrossing) :=
+        TLWidthWidget(bap.pbus) :=
+        bus
+    }
 
     omc
   }
